@@ -1,0 +1,52 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap1.xml",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Все файлы (*)",
+    "fileStates": {
+        "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap1.xml": {
+            "scale": 0.6,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 698.3333333333334,
+                "y": 453.33333333333337
+            }
+        },
+        "TestTileMap1.tmx": {
+            "scale": 0.6,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 698.3333333333334,
+                "y": 453.33333333333337
+            }
+        },
+        "TileSet1.tsx": {
+            "scaleInDock": 0.33,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Images",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 64,
+    "map.tileWidth": 64,
+    "map.width": 20,
+    "openFiles": [
+        "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap1.xml",
+        "TileSet1.tsx"
+    ],
+    "project": "TestMap.tiled-project",
+    "recentFiles": [
+        "TileSet1.tsx",
+        "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap1.xml",
+        "TestTileMap1.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 64,
+        "width": 64
+    }
+}
