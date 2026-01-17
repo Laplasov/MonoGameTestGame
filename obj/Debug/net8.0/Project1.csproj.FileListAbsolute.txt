@@ -186,3 +186,4 @@ C:\Users\Yandere312\Desktop\MonoGames\Test2\Project1\bin\Debug\net8.0\Content\Im
 C:\Users\Yandere312\Desktop\MonoGames\Test2\Project1\bin\Debug\net8.0\Content\Images\Character.xnb
 C:\Users\Yandere312\Desktop\MonoGames\Test2\Project1\bin\Debug\net8.0\Content\Images\TielMap.xnb
 C:\Users\Yandere312\Desktop\MonoGames\Test2\Project1\bin\Debug\net8.0\Content\Atlases\CharacterAtlas.xml
+C:\Users\Yandere312\Desktop\MonoGames\Test2\Project1\obj\Debug\net8.0\Project1.sourcelink.json
