@@ -84,6 +84,895 @@
         "ElementType": "Screens",
         "EventType": 5,
         "TimestampUtc": "2026-01-11T17:43:21.5656531Z"
+      },
+      {
+        "NewName": "Test (Container).NineSliceInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-13T05:36:11.0392692Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Test (Container).NineSlice NineSliceInstance in Test (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-13T05:36:25.6707217Z"
+      },
+      {
+        "NewName": "Title",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 0,
+        "TimestampUtc": "2026-01-17T21:46:30.582137Z"
+      },
+      {
+        "NewName": "Title.ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-17T23:49:56.9262696Z"
+      },
+      {
+        "NewName": "Title.TextInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-17T23:49:56.947169Z"
+      },
+      {
+        "NewName": "Title.ContainerInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-17T23:50:16.1860852Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Title",
+        "ElementType": "Screens",
+        "EventType": 1,
+        "TimestampUtc": "2026-01-17T23:51:55.193515Z"
+      },
+      {
+        "NewName": "MainMenu.ContainerInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-17T23:52:47.437825Z"
+      },
+      {
+        "NewName": "MainMenu.Root",
+        "OldName": "MainMenu.ContainerInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-17T23:53:09.8329832Z"
+      },
+      {
+        "NewName": "MainMenu.NineSliceInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T00:08:38.5421321Z"
+      },
+      {
+        "NewName": "MainMenu.Window",
+        "OldName": "MainMenu.NineSliceInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-18T00:10:02.5935297Z"
+      },
+      {
+        "NewName": "MainMenu.Button",
+        "OldName": "MainMenu.ButtonStandardInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-18T02:59:34.1827688Z"
+      },
+      {
+        "NewName": "MainMenu.ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T03:13:22.7902952Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard Button in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T03:13:22.7938803Z"
+      },
+      {
+        "NewName": "MainMenu.ButtonStandardInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T04:14:53.2723512Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard ButtonStandardInstance1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T04:15:19.7015079Z"
+      },
+      {
+        "NewName": "MainMenu.ContainerInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T04:15:31.8552959Z"
+      },
+      {
+        "NewName": "Castom/Window",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2026-01-18T04:16:17.9800835Z"
+      },
+      {
+        "NewName": "MainMenu.WindowInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T04:18:26.8625523Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.NineSlice Window in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T04:18:33.8804424Z"
+      },
+      {
+        "NewName": "Castom/Button",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2026-01-18T04:18:47.6495047Z"
+      },
+      {
+        "NewName": "MainMenu.ButtonInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T04:19:40.4849332Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard ButtonStandardInstance in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T04:19:59.8672729Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Container ContainerInstance in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T04:20:08.6434579Z"
+      },
+      {
+        "NewName": "MainMenu.ContainerInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T04:21:14.4204245Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Text TextInstance in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T04:22:08.0198105Z"
+      },
+      {
+        "NewName": "MainMenu.ButtonInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T04:22:10.3735306Z"
+      },
+      {
+        "NewName": "MainMenu.ButtonInstance2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T04:22:11.4945928Z"
+      },
+      {
+        "NewName": "MainMenu.ButtonInstance3",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T04:30:03.8753418Z"
+      },
+      {
+        "NewName": "MainMenu.NewGameButton",
+        "OldName": "MainMenu.ButtonInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-18T04:31:53.2307945Z"
+      },
+      {
+        "NewName": "MainMenu.LoadButton",
+        "OldName": "MainMenu.ButtonInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-18T04:32:02.3181969Z"
+      },
+      {
+        "NewName": "MainMenu.SettingsButton",
+        "OldName": "MainMenu.ButtonInstance2",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-18T04:32:10.9161782Z"
+      },
+      {
+        "NewName": "MainMenu.ExitButton",
+        "OldName": "MainMenu.ButtonInstance3",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-18T04:32:24.3221853Z"
+      },
+      {
+        "NewName": "MainMenu.TextInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T04:32:55.8971044Z"
+      },
+      {
+        "NewName": "MainMenu.TextInstances",
+        "OldName": "MainMenu.TextInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-18T07:20:05.0615408Z"
+      },
+      {
+        "NewName": "MainMenu.TextInstance",
+        "OldName": "MainMenu.TextInstances",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-18T07:21:40.721442Z"
+      },
+      {
+        "NewName": "MainMenu.TextInstance",
+        "OldName": "MainMenu.TextInstances",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-18T07:22:01.8877517Z"
+      },
+      {
+        "NewName": "MainMenu.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T07:22:20.6499933Z"
+      },
+      {
+        "NewName": "MainMenu.Text1",
+        "OldName": "MainMenu.TextInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-18T07:22:28.3854564Z"
+      },
+      {
+        "NewName": "MainMenu.ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T07:25:17.0213316Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard ButtonStandardInstance in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T07:35:33.4384483Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Text TextInstance in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T07:35:39.9636167Z"
+      },
+      {
+        "NewName": "MainMenu.ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T07:37:32.7710104Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard ButtonStandardInstance in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T07:38:15.433534Z"
+      },
+      {
+        "NewName": "MainMenu.ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T07:46:39.0767013Z"
+      },
+      {
+        "NewName": "Controls/ButtonGame",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2026-01-18T07:48:22.7258522Z"
+      },
+      {
+        "NewName": "Castom/ButtonGame",
+        "OldName": "Controls/ButtonGame",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2026-01-18T07:48:26.2614423Z"
+      },
+      {
+        "NewName": "MainMenu.ButtonGameInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T07:48:36.3828103Z"
+      },
+      {
+        "NewName": "MainMenu.ButtonGameInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T07:48:39.9749482Z"
+      },
+      {
+        "NewName": "MainMenu.ButtonGameInstance2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T07:48:40.7700057Z"
+      },
+      {
+        "NewName": "MainMenu.ButtonGameInstance3",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T07:48:41.2311632Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard NewGameButton in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T07:48:50.4427335Z"
+      },
+      {
+        "NewName": "MainMenu.NewGameButton",
+        "OldName": "MainMenu.ButtonGameInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-18T07:48:56.0994751Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard LoadButton in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T07:49:17.7694774Z"
+      },
+      {
+        "NewName": "MainMenu.LoadButton",
+        "OldName": "MainMenu.ButtonGameInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-18T07:49:22.1416073Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard SettingsButton in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T07:49:30.520393Z"
+      },
+      {
+        "NewName": "MainMenu.SettingsButton",
+        "OldName": "MainMenu.ButtonGameInstance2",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-18T07:49:34.9156918Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard ExitButton in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T07:49:47.7503542Z"
+      },
+      {
+        "NewName": "MainMenu.ExitButton",
+        "OldName": "MainMenu.ButtonGameInstance3",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-18T07:49:52.6866991Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard ButtonStandardInstance in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T07:53:46.7065998Z"
+      },
+      {
+        "NewName": "MainMenu.ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-18T08:24:18.4890863Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard ButtonStandardInstance in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T08:24:35.7765842Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Text Text1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-18T08:29:42.5857467Z"
+      },
+      {
+        "NewName": "MainMenu.NewGameButton1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T09:47:25.0250542Z"
+      },
+      {
+        "NewName": "MainMenu.LoadButton1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T09:47:25.0759971Z"
+      },
+      {
+        "NewName": "MainMenu.SettingsButton1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T09:47:25.0980028Z"
+      },
+      {
+        "NewName": "MainMenu.ExitButton1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T09:47:25.1412725Z"
+      },
+      {
+        "NewName": "MainMenu.ContainerInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T09:47:25.1633577Z"
+      },
+      {
+        "NewName": "MainMenu.WindowInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T09:47:25.1892461Z"
+      },
+      {
+        "NewName": "MainMenu.WindowSettings",
+        "OldName": "MainMenu.WindowInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-19T09:48:08.2393385Z"
+      },
+      {
+        "NewName": "MainMenu.MainWindow",
+        "OldName": "MainMenu.WindowInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-19T09:48:38.5662026Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard NewGameButton1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:33:50.6058428Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard LoadButton1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:33:53.5803835Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard SettingsButton1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:33:55.5897881Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard ExitButton1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:33:57.8311349Z"
+      },
+      {
+        "NewName": "MainMenu.TextInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:38:09.0940654Z"
+      },
+      {
+        "NewName": "MainMenuComponent",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2026-01-19T10:41:53.0369495Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenuComponent",
+        "ElementType": "Components",
+        "EventType": 1,
+        "TimestampUtc": "2026-01-19T10:42:08.748024Z"
+      },
+      {
+        "NewName": "MainMenu.ContainerInstance2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:42:26.4335421Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Container ContainerInstance2 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:43:01.02703Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Text TextInstance in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:43:31.2200206Z"
+      },
+      {
+        "NewName": "MainMenu.TextInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:44:27.7654235Z"
+      },
+      {
+        "NewName": "MainMenu.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:48:50.3878632Z"
+      },
+      {
+        "NewName": "MainMenu.TextTitle",
+        "OldName": "MainMenu.TextInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-19T10:49:11.8324117Z"
+      },
+      {
+        "NewName": "MainMenu.TextInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:49:32.3842853Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Text TextTitle in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:49:32.3876677Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Castom/Window WindowSettings in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:50:57.3207587Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Text TextInstance1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:50:57.4384974Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Container ContainerInstance1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:50:57.4406386Z"
+      },
+      {
+        "NewName": "MainMenu.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:51:00.7674714Z"
+      },
+      {
+        "NewName": "MainMenu.NewGameButton1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:51:00.8134801Z"
+      },
+      {
+        "NewName": "MainMenu.LoadButton1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:51:00.8337664Z"
+      },
+      {
+        "NewName": "MainMenu.SettingsButton1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:51:00.8562419Z"
+      },
+      {
+        "NewName": "MainMenu.ExitButton1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:51:00.8752521Z"
+      },
+      {
+        "NewName": "MainMenu.ContainerInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:51:00.900837Z"
+      },
+      {
+        "NewName": "MainMenu.MainWindow1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:51:00.9223657Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Text TextInstance1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:51:05.9931494Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard NewGameButton1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:51:07.7900724Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard LoadButton1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:51:12.4281458Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard SettingsButton1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:51:14.1150219Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard ExitButton1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:51:15.5532082Z"
+      },
+      {
+        "NewName": "MainMenu.ExitButton1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:51:22.9466358Z"
+      },
+      {
+        "NewName": "MainMenu.SettingsButton1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:51:23.636693Z"
+      },
+      {
+        "NewName": "MainMenu.LoadButton1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:51:24.5405822Z"
+      },
+      {
+        "NewName": "MainMenu.NewGameButton1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:51:25.0562667Z"
+      },
+      {
+        "NewName": "MainMenu.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:51:25.6626003Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard NewGameButton1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:51:41.2933479Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard LoadButton1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:51:43.2436028Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard SettingsButton1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:51:45.2669059Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/ButtonStandard ExitButton1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T10:51:47.1570301Z"
+      },
+      {
+        "NewName": "MainMenu.SliderInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:54:15.3877083Z"
+      },
+      {
+        "NewName": "MainMenu.ExitButton1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T10:58:22.5933448Z"
+      },
+      {
+        "NewName": "MainMenu.ExitSettings",
+        "OldName": "MainMenu.ExitButton1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-19T10:58:37.7673915Z"
+      },
+      {
+        "NewName": "MainMenu.SettingsWindow",
+        "OldName": "MainMenu.MainWindow1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-19T11:00:12.3518525Z"
+      },
+      {
+        "NewName": "Controls/SliderCopy",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2026-01-19T11:01:42.9196168Z"
+      },
+      {
+        "NewName": "Castom/SliderCopy",
+        "OldName": "Controls/SliderCopy",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2026-01-19T11:01:46.8389309Z"
+      },
+      {
+        "NewName": "Castom/SliderGame",
+        "OldName": "Castom/SliderCopy",
+        "ElementType": "Components",
+        "EventType": 2,
+        "TimestampUtc": "2026-01-19T11:02:06.7134364Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Controls/Slider SliderInstance in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T11:03:16.1491408Z"
+      },
+      {
+        "NewName": "MainMenu.SliderGameInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T11:03:20.0163272Z"
+      },
+      {
+        "NewName": "MainMenu.TextInstance2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T11:26:51.0937207Z"
+      },
+      {
+        "NewName": "MainMenu.SliderGameInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T11:26:51.120338Z"
+      },
+      {
+        "NewName": "MainMenu.ExitSettings1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T11:26:51.1398019Z"
+      },
+      {
+        "NewName": "MainMenu.ContainerInstance2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T11:26:51.1629981Z"
+      },
+      {
+        "NewName": "MainMenu.SettingsWindow1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2026-01-19T11:26:51.242419Z"
+      },
+      {
+        "NewName": "MainMenu.LoadWindow",
+        "OldName": "MainMenu.SettingsWindow1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-19T11:27:04.0220346Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MainMenu.Castom/SliderGame SliderGameInstance1 in MainMenu",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2026-01-19T11:27:09.68255Z"
+      },
+      {
+        "NewName": "MainMenu.ExitLoad",
+        "OldName": "MainMenu.ExitSettings1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-19T11:27:43.8202022Z"
       }
     ]
   }

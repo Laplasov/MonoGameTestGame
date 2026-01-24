@@ -85,3 +85,6 @@
 #begin Tiles/TestTileMap1.xml
 /copy:Tiles/TestTileMap1.xml
 
+#begin Tiles/TestTileMapBattle1.xml
+/copy:Tiles/TestTileMapBattle1.xml
+

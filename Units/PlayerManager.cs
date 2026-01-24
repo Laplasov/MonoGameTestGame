@@ -26,46 +26,27 @@ namespace Project1.Units
         public float Speed => _movementController.Speed;
         public float Decay => _movementController.Decay;
 
-        public PlayerManager(float x, float y) => Position = new Vector2(x, y);
+        public PlayerManager(Vector2 pos) => Position = new Vector2(pos.X, pos.Y);
         public void Load(ContentManager Content, string atlas)
         {
             _movementController = new MovementController(InputHandel);
             _characterAtlas = TextureAtlas.FromFile(Content, atlas);
-            _animationController = new AnimationController(_characterAtlas, "down", GetAnimationName);
+            _animationController = new AnimationController(_characterAtlas, angleOffset: -MathHelper.PiOver2);
         }
 
         public void Update(GameTime gameTime)
         {
-            if (LockPosition) return;
+            if (LockPosition) 
+                return;
+
             Vector2 movement = _movementController.Update(gameTime);
             Position += Velocity;
-            _animationController.Update(gameTime, Velocity, movement);
+            _animationController.UpdateWorld(gameTime, Velocity, movement);
         }
-
-        private string GetAnimationName(Direction direction)
-        {
-            switch (direction)
-            {
-                case Direction.UP:
-                    return "up";
-                case Direction.DOWN:
-                    return "down";
-                case Direction.LEFT:
-                    return "left";
-                case Direction.RIGHT:
-                    return "right";
-                case Direction.UP_LEFT:
-                    return "up_left";
-                case Direction.UP_RIGHT:
-                    return "up_right";
-                case Direction.DOWN_LEFT:
-                    return "down_left";
-                case Direction.DOWN_RIGHT:
-                    return "down_right";
-                default:
-                    return "down";
-            }
-        }
+        public void UpdatePerspective(GameTime gameTime, float angle) => _animationController.UpdateBattle(angle);
+        public void Draw() => _animationController.Draw(Core.SpriteBatch, Position);
+        public Texture2D GetCurrentTexture() => _animationController?.GetCurrentTexture();
+        public Rectangle GetCurrentSourceRect() => _animationController?.GetCurrentSourceRect() ?? Rectangle.Empty;
 
         private Vector2 InputHandel()
         {
@@ -78,8 +59,5 @@ namespace Project1.Units
                 movement.Normalize();
             return movement;
         }
-
-        public void Draw() => _animationController.Draw(Core.SpriteBatch, Position);
-
     }
 }

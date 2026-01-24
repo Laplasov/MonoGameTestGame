@@ -5,8 +5,8 @@ namespace Project1.Units
 {
     public class MovementController
     {
+        private const float VELOCITY_SNAP_THRESHOLD = 1f;
         private Vector2 _velocity = Vector2.Zero;
-
         public Vector2 Velocity => _velocity;
         public float Speed { get; set; } = 10f;
         public float Decay { get; set; } = 6f;
@@ -15,11 +15,8 @@ namespace Project1.Units
         // Delegate for getting movement input
         public Func<Vector2> GetMovementInput { get; set; }
 
-        public MovementController(Func<Vector2> movementInputGetter)
-        {
-            GetMovementInput = movementInputGetter ?? throw new ArgumentNullException(nameof(movementInputGetter));
-        }
-
+        public MovementController(Func<Vector2> movementInputGetter) => GetMovementInput = movementInputGetter ?? throw new ArgumentNullException(nameof(movementInputGetter));
+        public void Reset() => _velocity = Vector2.Zero;
         public Vector2 Update(GameTime gameTime)
         {
             if (LockPosition) return _velocity;
@@ -35,7 +32,7 @@ namespace Project1.Units
             else
             {
                 _velocity.X *= (1f - deltaTime * Decay);
-                if (Math.Abs(_velocity.X) < 1f) _velocity.X = 0f;
+                if (Math.Abs(_velocity.X) < VELOCITY_SNAP_THRESHOLD) _velocity.X = 0f;
             }
 
             // Handle Y axis
@@ -46,7 +43,7 @@ namespace Project1.Units
             else
             {
                 _velocity.Y *= (1f - deltaTime * Decay);
-                if (Math.Abs(_velocity.Y) < 1f) _velocity.Y = 0f;
+                if (Math.Abs(_velocity.Y) < VELOCITY_SNAP_THRESHOLD) _velocity.Y = 0f;
             }
 
             // Clamp total speed
@@ -56,11 +53,6 @@ namespace Project1.Units
             }
 
             return movement;
-        }
-
-        public void Reset()
-        {
-            _velocity = Vector2.Zero;
         }
     }
 }
