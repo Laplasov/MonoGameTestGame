@@ -45,10 +45,9 @@ namespace Project1.Scenes
             _terrainRenderer = new TerrainRenderer(Core.GraphicsDevice);
             _terrainRenderer.LoadFromTileMap(_tileMap, Layer);
 
-            _player.CreateUnits();
-            foreach (var unit in _player.UnitList) 
+            foreach (var unit in _player.UnitList)
             {
-                unit.UpdateWorldPosition(_tileMap);
+                unit.SetView(_tileMap);
                 _units.Add(unit);
             }
 

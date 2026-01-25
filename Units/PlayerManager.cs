@@ -30,22 +30,25 @@ namespace Project1.Units
         public Vector2 Velocity => _movementController.Velocity;
         public float Speed => _movementController.Speed;
         public float Decay => _movementController.Decay;
-        public AnimationController AnimationControllerMan => _animationController;
 
-
+        public PlayerManager() { }
         public PlayerManager(Vector2 pos) => Position = new Vector2(pos.X, pos.Y);
+        public PlayerManager WithPosition(Vector2 vec)
+        {
+            Position = vec;
+            return this;
+        }
         public void Load(ContentManager Content)
         {
-            _movementController = new MovementController(InputHandel);
             _characterAtlas = TextureAtlas.FromFile(Content, PlayerAtlasXML);
+            _movementController = new MovementController(InputHandel);
             _animationController = new AnimationController(_characterAtlas, angleOffset: -MathHelper.PiOver2);
-            //CreateUnits();
+            CreateUnits();
         }
 
         public void CreateUnits()
         {
-            var playerUnit = new UnitProfile("Unit1", new Vector2(1, 1));
-            playerUnit.SetBattleUnitView(_animationController, Core.GraphicsDevice);
+            var playerUnit = new UnitProfile("Unit1", new Vector2(1, 1), _animationController);
             UnitList.Add(playerUnit);
         }
 

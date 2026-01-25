@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MonoGame_Game_Library;
 using MonoGame_Game_Library.Graphics;
 using MonoGame_Game_Library.TileLogic;
 using System;
@@ -13,6 +14,7 @@ namespace Project1.Units
     public class UnitProfile
     {
         public BattleUnitView UnitView { get; private set; }
+        AnimationController _animationController;
         public string Name { get; set; } = "Unit1";
 
         private Vector2 _position = new Vector2(1, 1);
@@ -34,19 +36,25 @@ namespace Project1.Units
                 }
             }
         } 
-        public UnitProfile(string name, Vector2 position)
+        public UnitProfile(string name, Vector2 position, AnimationController animationController)
         {
             Name = name;
             Position = position;
+            _animationController = animationController;
         }
-        public void SetBattleUnitView(AnimationController animationController, GraphicsDevice device) => UnitView = new BattleUnitView(_position, animationController, device);
+        public void UpdateWorldPosition(TileMapLayered tileMap) => UnitView.UpdateWorldPosition(tileMap);
+        public void SetBattleUnitView(GraphicsDevice device) => UnitView = new BattleUnitView(_position, _animationController, device);
         public void SetBattleUnitView(TextureAtlas textureAtlas, GraphicsDevice device)
         {
-            var animationController = new AnimationController(textureAtlas, angleOffset: -MathHelper.PiOver2);
-            UnitView = new BattleUnitView(_position, animationController, device);
+            _animationController = new AnimationController(textureAtlas, angleOffset: -MathHelper.PiOver2);
+            UnitView = new BattleUnitView(_position, _animationController, device);
+        }
+        public void SetView(TileMapLayered tileMap)
+        {
+            SetBattleUnitView(Core.GraphicsDevice);
+            UnitView.UpdateWorldPosition(tileMap);
         }
         public void Update(float angle) => UnitView.Update(angle);
         public void Draw(CameraMatrix3D camera, GraphicsDevice device) => UnitView.Sprite.Draw(camera, device);
-        public void UpdateWorldPosition(TileMapLayered tileMap) => UnitView.UpdateWorldPosition(tileMap);
     }
 }

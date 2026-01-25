@@ -65,6 +65,14 @@ namespace Project1.Scenes
         {
             if (Core.Input.Keyboard.WasKeyJustPressed(Keys.E)) IsInBattle = !IsInBattle;
 
+            if (Core.Input.Keyboard.WasKeyJustPressed(Keys.T))
+            {
+                var playerManager = PlayerManager
+                    .WithPosition(new Vector2(400, 300));
+                Core.ChangeScene(new WorldTestScene(playerManager));
+                return;
+            }
+
             if (IsInBattle)
             {
                 _battleScene.Update(gameTime);

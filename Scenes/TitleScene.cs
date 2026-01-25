@@ -51,9 +51,8 @@ namespace Project1.Scenes
         {
             GameCore.UnloadCurrentUI();
 
-            var playerManager = new PlayerManager(new Vector2(400, 300));
-            playerManager.Load(Content);
-
+            var playerManager = new PlayerManager()
+                .WithPosition(new Vector2(400, 300));
             Core.ChangeScene(new WorldTestScene(playerManager));
 
         }
