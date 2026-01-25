@@ -4,6 +4,7 @@ using MonoGame_Game_Library;
 using MonoGame_Game_Library.Scenes;
 using Project1.UI;
 using System;
+using Project1.Units;
 
 namespace Project1.Scenes
 {
@@ -49,7 +50,12 @@ namespace Project1.Scenes
         void ChangeScene(object sender, EventArgs e)
         {
             GameCore.UnloadCurrentUI();
-            Core.ChangeScene(new WorldTestScene());
+
+            var playerManager = new PlayerManager(new Vector2(400, 300));
+            playerManager.Load(Content);
+
+            Core.ChangeScene(new WorldTestScene(playerManager));
+
         }
         void ExitGame(object sender, EventArgs e) => GameCore.ExitCore();
         void SettingsWindow(object sender, EventArgs e)

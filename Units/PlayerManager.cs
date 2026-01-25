@@ -3,35 +3,50 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame_Game_Library;
+using MonoGame_Game_Library.Camera;
 using MonoGame_Game_Library.Graphics;
+using RenderingLibrary.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
-using MonoGame_Game_Library.Camera;
 
 namespace Project1.Units
 {
     public class PlayerManager : ITrackable
     {
-        TextureAtlas _characterAtlas;
+        protected virtual string PlayerAtlasXML { set; get; } = "Atlases/CharacterAtlas.xml";
+
+        private TextureAtlas _characterAtlas;
         private MovementController _movementController;
         private AnimationController _animationController;
+
+        public List<UnitProfile> UnitList = new List<UnitProfile>();
 
         public Vector2 Position { get; set; }
         public bool LockPosition { get; set; } = false;
         public Vector2 Velocity => _movementController.Velocity;
         public float Speed => _movementController.Speed;
         public float Decay => _movementController.Decay;
+        public AnimationController AnimationControllerMan => _animationController;
+
 
         public PlayerManager(Vector2 pos) => Position = new Vector2(pos.X, pos.Y);
-        public void Load(ContentManager Content, string atlas)
+        public void Load(ContentManager Content)
         {
             _movementController = new MovementController(InputHandel);
-            _characterAtlas = TextureAtlas.FromFile(Content, atlas);
+            _characterAtlas = TextureAtlas.FromFile(Content, PlayerAtlasXML);
             _animationController = new AnimationController(_characterAtlas, angleOffset: -MathHelper.PiOver2);
+            //CreateUnits();
+        }
+
+        public void CreateUnits()
+        {
+            var playerUnit = new UnitProfile("Unit1", new Vector2(1, 1));
+            playerUnit.SetBattleUnitView(_animationController, Core.GraphicsDevice);
+            UnitList.Add(playerUnit);
         }
 
         public void Update(GameTime gameTime)
@@ -43,10 +58,7 @@ namespace Project1.Units
             Position += Velocity;
             _animationController.UpdateWorld(gameTime, Velocity, movement);
         }
-        public void UpdatePerspective(GameTime gameTime, float angle) => _animationController.UpdateBattle(angle);
         public void Draw() => _animationController.Draw(Core.SpriteBatch, Position);
-        public Texture2D GetCurrentTexture() => _animationController?.GetCurrentTexture();
-        public Rectangle GetCurrentSourceRect() => _animationController?.GetCurrentSourceRect() ?? Rectangle.Empty;
 
         private Vector2 InputHandel()
         {

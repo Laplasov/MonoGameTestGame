@@ -14,21 +14,28 @@ using RenderingLibrary.Graphics;
 
 namespace Project1.Units
 {
-    public class BattleUnit
+    public class BattleUnitView
     {
         public BillboardSprite Sprite { get; private set; }
         public Vector2 TilePosition { get; set; }
-        public string Name { get; set; }
         public Texture2D Texture { get; set; }
         public Rectangle SourceRect { get; set; }
+        public AnimationController AnimationController { get; private set; }
 
         private static float PIXEL_TO_WORLD_SCALE = 0.01f;
 
-        public BattleUnit(GraphicsDevice device, Vector2 tilePos, string name)
+        public BattleUnitView(Vector2 tilePos, AnimationController animationController, GraphicsDevice device)
         {
             TilePosition = tilePos;
-            Name = name;
             Sprite = new BillboardSprite(device, Vector3.Zero, 0.5f, 0.5f);
+            AnimationController = animationController;
+        }
+        public void Update(float angle)
+        {
+            var texture = AnimationController.GetCurrentTexture();
+            var sourceRect = AnimationController.GetCurrentSourceRect();
+            UpdateTexture(texture, sourceRect);
+            AnimationController.UpdateBattle(angle);
         }
 
         public void UpdateWorldPosition(TileMapLayered tileMap)
