@@ -37,7 +37,6 @@ namespace Project1.Units
             UpdateTexture(texture, sourceRect);
             AnimationController.UpdateBattle(angle);
         }
-
         public void UpdateWorldPosition(TileMapLayered tileMap)
         {
             Vector3 worldPos = tileMap.TileToWorld(

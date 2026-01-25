@@ -42,16 +42,15 @@ namespace Project1.Units
             Position = position;
             _animationController = animationController;
         }
-        public void UpdateWorldPosition(TileMapLayered tileMap) => UnitView.UpdateWorldPosition(tileMap);
-        public void SetBattleUnitView(GraphicsDevice device) => UnitView = new BattleUnitView(_position, _animationController, device);
-        public void SetBattleUnitView(TextureAtlas textureAtlas, GraphicsDevice device)
+        public UnitProfile(string name, Vector2 position, TextureAtlas textureAtlas, float angleOffset = -MathHelper.PiOver2)
         {
-            _animationController = new AnimationController(textureAtlas, angleOffset: -MathHelper.PiOver2);
-            UnitView = new BattleUnitView(_position, _animationController, device);
+            Name = name;
+            Position = position;
+            _animationController = new AnimationController(textureAtlas, angleOffset: angleOffset);
         }
         public void SetView(TileMapLayered tileMap)
         {
-            SetBattleUnitView(Core.GraphicsDevice);
+            UnitView = new BattleUnitView(_position, _animationController, Core.GraphicsDevice);
             UnitView.UpdateWorldPosition(tileMap);
         }
         public void Update(float angle) => UnitView.Update(angle);

@@ -69,6 +69,7 @@ namespace Project1.Scenes
             {
                 var playerManager = PlayerManager
                     .WithPosition(new Vector2(400, 300));
+                playerManager.UnitList.Clear();
                 Core.ChangeScene(new WorldTestScene(playerManager));
                 return;
             }
