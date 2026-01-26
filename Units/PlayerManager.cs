@@ -19,9 +19,12 @@ namespace Project1.Units
     {
         protected virtual string PlayerAtlasXML { set; get; } = "Atlases/CharacterAtlas.xml";
 
+        protected virtual string PlayerName { set; get; } = "Player";
+
         private TextureAtlas _characterAtlas;
         private MovementController _movementController;
         private AnimationController _animationController;
+
 
         public List<UnitProfile> UnitList = new List<UnitProfile>();
 
@@ -31,26 +34,34 @@ namespace Project1.Units
         public float Speed => _movementController.Speed;
         public float Decay => _movementController.Decay;
 
-        public PlayerManager() { }
+        public PlayerManager() 
+        {
+        }
         public PlayerManager(Vector2 pos) => Position = new Vector2(pos.X, pos.Y);
         public PlayerManager WithPosition(Vector2 vec)
         {
             Position = vec;
             return this;
         }
+        public void CreateUnits()
+        {
+            var playerUnit = new UnitProfile(PlayerName, new Vector2(1, 1));
+            UnitList.Add(playerUnit);
+        }
         public void Load(ContentManager Content)
         {
             _characterAtlas = TextureAtlas.FromFile(Content, PlayerAtlasXML);
             _movementController = new MovementController(InputHandel);
             _animationController = new AnimationController(_characterAtlas, angleOffset: -MathHelper.PiOver2);
-            CreateUnits();
+
+            foreach (var unit in UnitList) 
+            {
+                unit.SetAtlas(_characterAtlas);
+                unit.SetNewAnimationController();
+            }
+
         }
 
-        public void CreateUnits()
-        {
-            var playerUnit = new UnitProfile("Unit1", new Vector2(1, 1), _animationController);
-            UnitList.Add(playerUnit);
-        }
 
         public void Update(GameTime gameTime)
         {

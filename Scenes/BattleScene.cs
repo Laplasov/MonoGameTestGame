@@ -23,8 +23,7 @@ namespace Project1.Scenes
         private BattleUnitView _playerUnit;
         private List<UnitProfile> _units = new List<UnitProfile>();
         public BattleScene(PlayerManager player) => _player = player;
-
-        public override void Initialize()
+        public override void LoadContent()
         {
             //Load tile map XML
             _tileMap = TileMapLayered.LoadFromXml(MapXMLFile);
@@ -32,11 +31,6 @@ namespace Project1.Scenes
             //Create camera
             _cameraManage = new CameraViewManager();
 
-            base.Initialize();
-        }
-
-        public override void LoadContent()
-        {
             //Load tile map image 
             var tileSetTexture = Content.Load<Texture2D>(MapTexture);
             _tileMap.SetTilesetForAllLayers(tileSetTexture, _tileMap.TileWidth, _tileMap.TileHeight);

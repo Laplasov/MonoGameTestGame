@@ -32,10 +32,13 @@ namespace Project1.Units
         }
         public void Update(float angle)
         {
-            var texture = AnimationController.GetCurrentTexture();
-            var sourceRect = AnimationController.GetCurrentSourceRect();
-            UpdateTexture(texture, sourceRect);
-            AnimationController.UpdateBattle(angle);
+            var texture = AnimationController?.GetCurrentTexture();
+            var sourceRect = AnimationController?.GetCurrentSourceRect() ?? Rectangle.Empty;
+            if(texture != null && sourceRect != Rectangle.Empty)
+            {
+                UpdateTexture(texture, sourceRect);
+                AnimationController.UpdateBattle(angle);
+            }
         }
         public void UpdateWorldPosition(TileMapLayered tileMap)
         {

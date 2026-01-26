@@ -35,8 +35,7 @@ namespace Project1.Scenes
         protected virtual float LayerScale { set; get; } = 2;
 
         public WorldTestScene(PlayerManager playerManager) => PlayerManager = playerManager;
-
-        public override void Initialize()
+        public override void LoadContent()
         {
             //Visuals
             _cameraMatrix = new CameraMatrix(Core.Graphics);
@@ -45,11 +44,6 @@ namespace Project1.Scenes
 
             _cameraMatrix.TrackTarget(PlayerManager);
 
-            base.Initialize();
-        }
-
-        public override void LoadContent()
-        {
             //Set texture for ground
             var tileSetTextureGround = Content.Load<Texture2D>(MapTexture);
             _tileMapGround.SetTilesetForAllLayers(tileSetTextureGround, _tileMapGround.TileWidth, _tileMapGround.TileHeight);
@@ -69,7 +63,7 @@ namespace Project1.Scenes
             {
                 var playerManager = PlayerManager
                     .WithPosition(new Vector2(400, 300));
-                playerManager.UnitList.Clear();
+                //playerManager.UnitList.Clear();
                 Core.ChangeScene(new WorldTestScene(playerManager));
                 return;
             }

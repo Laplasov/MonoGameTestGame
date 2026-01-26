@@ -15,6 +15,7 @@ namespace Project1.Units
     {
         public BattleUnitView UnitView { get; private set; }
         AnimationController _animationController;
+        TextureAtlas _textureAtlas;
         public string Name { get; set; } = "Unit1";
 
         private Vector2 _position = new Vector2(1, 1);
@@ -42,11 +43,15 @@ namespace Project1.Units
             Position = position;
             _animationController = animationController;
         }
-        public UnitProfile(string name, Vector2 position, TextureAtlas textureAtlas, float angleOffset = -MathHelper.PiOver2)
+        public UnitProfile(string name, Vector2 position)
         {
             Name = name;
             Position = position;
-            _animationController = new AnimationController(textureAtlas, angleOffset: angleOffset);
+        }
+        public void SetAtlas(TextureAtlas textureAtlas) => _textureAtlas = textureAtlas;
+        public void SetNewAnimationController(float angleOffset = -MathHelper.PiOver2)
+        {
+            _animationController = new AnimationController(_textureAtlas, angleOffset: angleOffset);
         }
         public void SetView(TileMapLayered tileMap)
         {
