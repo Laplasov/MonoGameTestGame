@@ -15,6 +15,7 @@ namespace Project1.Scenes
         protected virtual string MapXMLFile { set; get; } = "Content/Tiles/TestTileMapBattle1.xml";
         protected virtual string MapTexture { set; get; } = "Images/TileMap";
         protected virtual string Layer { set; get; } = "Ground";
+        public override string SceneName { get; set; } = "BattleScene";
 
         private TerrainRenderer _terrainRenderer;
         private TileMapLayered _tileMap;

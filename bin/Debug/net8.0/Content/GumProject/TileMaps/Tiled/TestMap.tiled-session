@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMapBattle1tmx.xml",
+    "activeFile": "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap2.xml",
     "expandedProjectPaths": [
         "."
     ],
@@ -13,8 +13,16 @@
             "scale": 0.6,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 698.3333333333334,
-                "y": 453.33333333333337
+                "x": 640.8333333333334,
+                "y": 639.1666666666667
+            }
+        },
+        "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap2.xml": {
+            "scale": 1.6142578125,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 159.82577132486392,
+                "y": 255.84513006654566
             }
         },
         "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMapBattle1tmx.xml": {
@@ -29,8 +37,8 @@
             "scale": 0.6,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 698.3333333333334,
-                "y": 453.33333333333337
+                "x": 640,
+                "y": 640.8333333333334
             }
         },
         "TestTileMapBattle1tmx.tmx": {
@@ -55,14 +63,15 @@
     "openFiles": [
         "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap1.xml",
         "TileSet1.tsx",
-        "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMapBattle1tmx.xml",
-        "TestTileMap1.tmx"
+        "TestTileMap1.tmx",
+        "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap2.xml"
     ],
     "project": "TestMap.tiled-project",
     "recentFiles": [
         "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap1.xml",
         "TileSet1.tsx",
         "TestTileMap1.tmx",
+        "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap2.xml",
         "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMapBattle1tmx.xml"
     ],
     "tileset.lastUsedFormat": "tsx",

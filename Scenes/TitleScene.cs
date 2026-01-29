@@ -1,25 +1,40 @@
-﻿using Gum.Wireframe;
+﻿using Gum.Forms;
+using Gum.Wireframe;
 using Microsoft.Xna.Framework;
 using MonoGame_Game_Library;
 using MonoGame_Game_Library.Scenes;
+using MonoGameGum.Forms;
+using Project1.Components.Castom;
+using Project1.Save;
 using Project1.UI;
-using System;
 using Project1.Units;
+using System;
+using System.Collections.Generic;
+using static RenderingLibrary.Graphics.XMLFont;
+using Button = Gum.Forms.Controls.Button;
+using Label = Gum.Forms.Controls.Label;
+using ListBox = Gum.Forms.Controls.ListBox;
+using ListBoxItem = Gum.Forms.Controls.ListBoxItem;
 
 namespace Project1.Scenes
 {
     public class TitleScene : Scene
     {
+        public override string SceneName { get; set; } = "TitleScene";
         EffectsManager _fogEffect;
         float _time;
 
         GraphicalUiElement _mainWindow;
         GraphicalUiElement _settingsWindow;
         GraphicalUiElement _loadsWindow;
+        GraphicalUiElement _newGameWindow;
+
+        SaveManager _saveManager;
 
         public override void Initialize()
         {
             Core.ExitOnEscape = true;
+            _saveManager = new SaveManager();
             GameCore.SetScreenGum("MainMenu");
             InitializeUIGum();
             base.Initialize();
@@ -35,19 +50,36 @@ namespace Project1.Scenes
         public void InitializeUIGum()
         {
             var ui = GameCore.GumElement;
-            ui.BindButton("NewGameButton", ChangeScene);
+            ui.BindButton("NewGameButton", ShowNewGameWindow);
             ui.BindButton("ExitButton", ExitGame);
             ui.BindButton("SettingsButton", SettingsWindow);
             ui.BindButton("LoadButton", LoadsWindow);
             ui.BindButton("ExitSettings", ShowMain);
             ui.BindButton("ExitLoad", ShowMain);
+            ui.BindButton("ExitNewGameButton", ExitNewGameWindow);
+            ui.BindButton("OkNewGameButton", AddNewSave); 
+            ui.BindButton("DeleteAllLoad", DeleteAllSaves);
+            ui.BindButton("DeleteLoad", DeleteSaves);
 
             _mainWindow = ui.GetGraphicalUiElementByName("MainWindow");
             _settingsWindow = ui.GetGraphicalUiElementByName("SettingsWindow");
             _loadsWindow = ui.GetGraphicalUiElementByName("LoadWindow");
+            _newGameWindow = ui.GetGraphicalUiElementByName("NewGame");
+
+            _saveManager.PopulateListBoxFromXML();
+
         }
 
-        void ChangeScene(object sender, EventArgs e)
+        void AddNewSave(object sender, EventArgs e)
+        {
+            _saveManager.AddNewSaveFromTextField(GameCore.GetCurrentScene());
+            ChangeScene();
+        }
+
+        void DeleteAllSaves(object sender, EventArgs e) => _saveManager.DeleteAllSaves();
+        void DeleteSaves(object sender, EventArgs e) => _saveManager.DeleteSelectedSave();
+        void ChangeScene(object sender, EventArgs e) => ChangeScene();
+        void ChangeScene()
         {
             GameCore.UnloadCurrentUI();
 
@@ -55,8 +87,9 @@ namespace Project1.Scenes
                 .WithPosition(new Vector2(400, 300));
             playerManager.CreateUnits();
             Core.ChangeScene(new WorldTestScene(playerManager));
-
         }
+
+
         void ExitGame(object sender, EventArgs e) => GameCore.ExitCore();
         void SettingsWindow(object sender, EventArgs e)
         {
@@ -73,6 +106,16 @@ namespace Project1.Scenes
             _mainWindow.Visible = true;
             _settingsWindow.Visible = false;
             _loadsWindow.Visible = false;
+        }
+        void ShowNewGameWindow(object sender, EventArgs e)
+        {
+            _mainWindow.Visible = false;
+            _newGameWindow.Visible = true;
+        }
+        void ExitNewGameWindow(object sender, EventArgs e)
+        {
+            _mainWindow.Visible = true;
+            _newGameWindow.Visible = false;
         }
 
     }

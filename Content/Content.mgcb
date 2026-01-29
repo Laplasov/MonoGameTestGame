@@ -82,8 +82,14 @@
 /processorParam:TextureFormat=Color
 /build:Images/TielMap.png
 
+#begin Save/SaveFile.xml
+/copy:Save/SaveFile.xml
+
 #begin Tiles/TestTileMap1.xml
 /copy:Tiles/TestTileMap1.xml
+
+#begin Tiles/TestTileMap2.xml
+/copy:Tiles/TestTileMap2.xml
 
 #begin Tiles/TestTileMapBattle1.xml
 /copy:Tiles/TestTileMapBattle1.xml

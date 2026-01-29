@@ -3,11 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 using MonoGame_Game_Library;
 using MonoGame_Game_Library.Graphics;
 using MonoGame_Game_Library.TileLogic;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project1.Units
 {
@@ -36,21 +31,15 @@ namespace Project1.Units
                     _position = value;
                 }
             }
-        } 
-        public UnitProfile(string name, Vector2 position, AnimationController animationController)
-        {
-            Name = name;
-            Position = position;
-            _animationController = animationController;
         }
         public UnitProfile(string name, Vector2 position)
         {
             Name = name;
             Position = position;
         }
-        public void SetAtlas(TextureAtlas textureAtlas) => _textureAtlas = textureAtlas;
-        public void SetNewAnimationController(float angleOffset = -MathHelper.PiOver2)
+        public void SetAnimation(TextureAtlas textureAtlas, float angleOffset = -MathHelper.PiOver2)
         {
+            _textureAtlas = textureAtlas;
             _animationController = new AnimationController(_textureAtlas, angleOffset: angleOffset);
         }
         public void SetView(TileMapLayered tileMap)

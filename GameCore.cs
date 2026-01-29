@@ -9,11 +9,11 @@ using MonoGame_Game_Library;
 using MonoGame_Game_Library.Camera;
 using MonoGame_Game_Library.Graphics;
 using MonoGame_Game_Library.Input;
+using MonoGame_Game_Library.Scenes;
 using MonoGameGum;
 using MonoGameGum.Forms.Controls;
 using MonoGameGum.GueDeriving;
 using MonoGameLibrary;
-using Project1.Gum;
 using Project1.Scenes;
 using Project1.SpritLogic;
 using RenderingLibrary;
@@ -25,6 +25,9 @@ using System.Reflection.Emit;
 using Button = Gum.Forms.Controls.Button;
 
 namespace Project1;
+
+//In case broken generated code for gum, change wieframe inheritanse for scene
+//MainMenuRuntime : global::MonoGameGum.GueDeriving.ContainerRuntime
 
 public class GameCore : Core
 {
@@ -77,6 +80,7 @@ public class GameCore : Core
         return _graphicalUiElement;
     }
     public static void RegisterEventCleanup(Action cleanupAction) => _eventCleanups.Add(cleanupAction);
+    public static Scene GetCurrentScene() => ActiveScene;
     public static void UnloadCurrentUI()
     {
         foreach (var cleanup in _eventCleanups)

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SaveGameList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Items>
+    <SaveGame>
+      <SaveName>hgh</SaveName>
+      <Location>TitleScene</Location>
+      <SaveTime>2026-01-29T04:29:46.9045154+03:00</SaveTime>
+      <QualifiedName>Project1.Scenes.TitleScene, Project1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</QualifiedName>
+    </SaveGame>
+    <SaveGame>
+      <SaveName>a</SaveName>
+      <Location>TitleScene</Location>
+      <SaveTime>2026-01-29T04:39:00.0000022+03:00</SaveTime>
+      <QualifiedName>Project1.Scenes.TitleScene, Project1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</QualifiedName>
+    </SaveGame>
+    <SaveGame>
+      <SaveName>f</SaveName>
+      <Location>TitleScene</Location>
+      <SaveTime>2026-01-29T04:41:15.5866066+03:00</SaveTime>
+      <QualifiedName>Project1.Scenes.TitleScene, Project1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</QualifiedName>
+    </SaveGame>
+  </Items>
+</SaveGameList>

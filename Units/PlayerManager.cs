@@ -18,26 +18,21 @@ namespace Project1.Units
     public class PlayerManager : ITrackable
     {
         protected virtual string PlayerAtlasXML { set; get; } = "Atlases/CharacterAtlas.xml";
-
         protected virtual string PlayerName { set; get; } = "Player";
 
         private TextureAtlas _characterAtlas;
         private MovementController _movementController;
         private AnimationController _animationController;
 
-
         public List<UnitProfile> UnitList = new List<UnitProfile>();
 
-        public Vector2 Position { get; set; }
+        public Vector2 Position { get; set; } = Vector2.Zero;
         public bool LockPosition { get; set; } = false;
         public Vector2 Velocity => _movementController.Velocity;
         public float Speed => _movementController.Speed;
         public float Decay => _movementController.Decay;
 
-        public PlayerManager() 
-        {
-        }
-        public PlayerManager(Vector2 pos) => Position = new Vector2(pos.X, pos.Y);
+        public PlayerManager() {}
         public PlayerManager WithPosition(Vector2 vec)
         {
             Position = vec;
@@ -56,13 +51,10 @@ namespace Project1.Units
 
             foreach (var unit in UnitList) 
             {
-                unit.SetAtlas(_characterAtlas);
-                unit.SetNewAnimationController();
+                unit.SetAnimation(_characterAtlas);
             }
 
         }
-
-
         public void Update(GameTime gameTime)
         {
             if (LockPosition) 
