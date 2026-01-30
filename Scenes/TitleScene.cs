@@ -60,6 +60,7 @@ namespace Project1.Scenes
             ui.BindButton("OkNewGameButton", AddNewSave); 
             ui.BindButton("DeleteAllLoad", DeleteAllSaves);
             ui.BindButton("DeleteLoad", DeleteSaves);
+            ui.BindButton("LoadCurrent", LoadGame);
 
             _mainWindow = ui.GetGraphicalUiElementByName("MainWindow");
             _settingsWindow = ui.GetGraphicalUiElementByName("SettingsWindow");
@@ -72,21 +73,31 @@ namespace Project1.Scenes
 
         void AddNewSave(object sender, EventArgs e)
         {
-            _saveManager.AddNewSaveFromTextField(GameCore.GetCurrentScene());
-            ChangeScene();
+            var newSave = _saveManager.AddNewSaveFromTextField();
+            if(newSave != null)
+                NewGame(newSave);
         }
 
         void DeleteAllSaves(object sender, EventArgs e) => _saveManager.DeleteAllSaves();
         void DeleteSaves(object sender, EventArgs e) => _saveManager.DeleteSelectedSave();
-        void ChangeScene(object sender, EventArgs e) => ChangeScene();
-        void ChangeScene()
+        void NewGame(SaveGame newSave)
         {
-            GameCore.UnloadCurrentUI();
-
             var playerManager = new PlayerManager()
-                .WithPosition(new Vector2(400, 300));
+                .WithPosition(newSave.SceneData.Position)
+                .WithName(newSave.SaveName);
             playerManager.CreateUnits();
-            Core.ChangeScene(new WorldTestScene(playerManager));
+            Core.ChangeScene(new WorldTestScene(playerManager, newSave.SceneData));
+            GameCore.UnloadCurrentUI();
+        }
+        void LoadGame(object sender, EventArgs e) => LoadGame();
+        void LoadGame()
+        {
+            SaveGame load = _saveManager.GetSelectedSaveData();
+            var playerManager = new PlayerManager()
+                .WithPosition(load.SceneData.Position);
+            playerManager.CreateUnits();
+            Core.ChangeScene(new WorldTestScene(playerManager, load.SceneData));
+            GameCore.UnloadCurrentUI();
         }
 
 

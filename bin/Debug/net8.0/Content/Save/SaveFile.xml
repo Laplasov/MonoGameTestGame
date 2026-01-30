@@ -2,22 +2,20 @@
 <SaveGameList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Items>
     <SaveGame>
-      <SaveName>hgh</SaveName>
-      <Location>TitleScene</Location>
-      <SaveTime>2026-01-29T04:29:46.9045154+03:00</SaveTime>
-      <QualifiedName>Project1.Scenes.TitleScene, Project1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</QualifiedName>
-    </SaveGame>
-    <SaveGame>
-      <SaveName>a</SaveName>
-      <Location>TitleScene</Location>
-      <SaveTime>2026-01-29T04:39:00.0000022+03:00</SaveTime>
-      <QualifiedName>Project1.Scenes.TitleScene, Project1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</QualifiedName>
-    </SaveGame>
-    <SaveGame>
-      <SaveName>f</SaveName>
-      <Location>TitleScene</Location>
-      <SaveTime>2026-01-29T04:41:15.5866066+03:00</SaveTime>
-      <QualifiedName>Project1.Scenes.TitleScene, Project1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</QualifiedName>
+      <SaveName>hjghj</SaveName>
+      <Location>WorldTestScene</Location>
+      <SaveTime>2026-01-30T04:57:09.1838879+03:00</SaveTime>
+      <SceneData>
+        <SceneName>WorldTestScene</SceneName>
+        <MapXMLFile>Content/Tiles/TestTileMap1.xml</MapXMLFile>
+        <MapTexture>Images/TileMap</MapTexture>
+        <Layer>Ground</Layer>
+        <EffectsPath>Effects/FBM</EffectsPath>
+        <LayerScale>2</LayerScale>
+        <PositionX>800</PositionX>
+        <PositionY>600</PositionY>
+      </SceneData>
+      <PlayerAtlasXML>Atlases/CharacterAtlas.xml</PlayerAtlasXML>
     </SaveGame>
   </Items>
 </SaveGameList>

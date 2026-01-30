@@ -2954,6 +2954,13 @@
         "ElementType": "Screens",
         "EventType": 7,
         "TimestampUtc": "2026-01-28T22:00:16.7950294Z"
+      },
+      {
+        "NewName": "MainMenu.LoadCurrent",
+        "OldName": "MainMenu.DeleteCurrentLoad",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2026-01-29T18:35:51.5358064Z"
       }
     ]
   }

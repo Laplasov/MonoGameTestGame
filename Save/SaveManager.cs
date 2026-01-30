@@ -1,22 +1,28 @@
 ﻿using Gum.Forms;
 using Gum.Wireframe;
 using Microsoft.Xna.Framework.Content;
+using MonoGame_Game_Library.Graphics;
 using MonoGame_Game_Library.Scenes;
 using MonoGameGum.Forms;
 using Project1.Components.Castom;
 using Project1.Scenes;
+using Project1.Units;
 using System;
+using System.Linq;
+using System.Reflection.Metadata;
 using ListBox = Gum.Forms.Controls.ListBox;
 using TextBox = Gum.Forms.Controls.TextBox;
 
 namespace Project1.Save
 {
-    internal class SaveManager
+    public class SaveManager
     {
         private const string SaveDir = "Save";
         private const string SaveFileName = "SaveFile.xml";
         private const string ListBoxName = "ListBoxInstance";
         private const string TextFieldName = "TextBoxCastomInstance";
+        private const string FrontSprite = "down_1";
+        private const string TimeFormat = "yy.MM.dd HH:mm";
 
         public void PopulateListBoxFromXML()
         {
@@ -31,14 +37,20 @@ namespace Project1.Save
 
                 foreach (var save in saveList.Items)
                 {
+                    var characterAtlas = TextureAtlas.FromFile(GameCore.Content, save.PlayerAtlasXML);
                     var listBoxItem = new ListBoxItemNewCastom();
+                    TextureRegion region = characterAtlas.GetRegion(FrontSprite);
+
+                    listBoxItem.SpriteInstance.Texture = region.Texture;
+                    listBoxItem.SpriteInstance.SourceRectangle = region.SourceRectangle;
+
                     _listBox.Items.Add(listBoxItem);
-                    listBoxItem.ListItemDisplayText = $"{save.SaveName}\n{save.Location}\n{save.SaveTime.ToString("yy.MM.dd HH:mm")}";
+                    listBoxItem.ListItemDisplayText = $"{save.SaveName}\n{save.Location}\n{save.SaveTime.ToString(TimeFormat)}";
                 }
             }
         }
 
-        public void AddNewSaveFromTextField(Scene currentScene)
+        public SaveGame AddNewSaveFromTextField()
         {
             var textField = GameCore.GumElement.GetFrameworkElementByName<TextBox>(TextFieldName);
 
@@ -56,21 +68,19 @@ namespace Project1.Save
             foreach(SaveGame item in saveList.Items)
             {
                 if (item.SaveName == textField.Text)
-                    return;
+                    return null;
             }
 
-            if (textField == null || string.IsNullOrWhiteSpace(textField.Text)) return;
+            if (textField == null || string.IsNullOrWhiteSpace(textField.Text)) return null;
 
-
+            var newSceneInstant = new SceneData();
             var newSave = new SaveGame
             {
                 SaveName = saveName,
-                Location = currentScene.SceneName,
+                Location = newSceneInstant.SceneName,
                 SaveTime = System.DateTime.Now,
-                QualifiedName = currentScene.GetType().AssemblyQualifiedName
+                SceneData = newSceneInstant
             };
-            //Type sceneType = Type.GetType(fullName);
-            //Scene scene = (Scene)Activator.CreateInstance(sceneType);
 
             saveList.Items.Add(newSave);
 
@@ -93,6 +103,8 @@ namespace Project1.Save
             }
 
             System.Diagnostics.Debug.WriteLine(savePath);
+
+            return newSave;
         }
 
         public void DeleteAllSaves()
@@ -165,6 +177,61 @@ namespace Project1.Save
                 // Refresh UI
                 PopulateListBoxFromXML();
 
+            }
+        }
+
+        public SaveGame GetSelectedSaveData()
+        {
+            var _listBox = GameCore.GumElement.GetFrameworkElementByName<ListBox>(ListBoxName);
+
+            int selectedIndex = _listBox.SelectedIndex;
+
+            string savePath = System.IO.Path.Combine(GameCore.Content.RootDirectory, SaveDir, SaveFileName);
+
+            if (!System.IO.File.Exists(savePath))
+            {
+                System.Diagnostics.Debug.WriteLine("Save file doesn't exist!");
+                return null;
+            }
+
+            SaveGameList saveList;
+            using (var stream = System.IO.File.OpenRead(savePath))
+            {
+                var serializer = new System.Xml.Serialization.XmlSerializer(typeof(SaveGameList));
+                saveList = (SaveGameList)serializer.Deserialize(stream);
+            }
+
+             return saveList.Items[selectedIndex];
+        
+        }
+
+        public static void SaveGame(PlayerManager playerManager, SceneData sceneInstant)
+        {
+            SaveGameList saveList;
+
+            string savePath = System.IO.Path.Combine(GameCore.Content.RootDirectory, SaveDir, SaveFileName);
+
+            using (var stream = System.IO.File.OpenRead(savePath))
+            {
+                var serializer = new System.Xml.Serialization.XmlSerializer(typeof(SaveGameList));
+                saveList = (SaveGameList)serializer.Deserialize(stream);
+            }
+
+            SaveGame existingSave = saveList.Items.FirstOrDefault(item => item.SaveName == playerManager.PlayerName);
+
+            if (existingSave != null)
+            {
+                existingSave.Location = sceneInstant.SceneName;
+                existingSave.SaveTime = DateTime.Now;
+                sceneInstant.Position = playerManager.Position;
+                existingSave.SceneData = sceneInstant;
+            }
+            else return;
+
+            using (var stream = System.IO.File.Create(savePath))
+            {
+                var serializer = new System.Xml.Serialization.XmlSerializer(typeof(SaveGameList));
+                serializer.Serialize(stream, saveList);
             }
         }
     }

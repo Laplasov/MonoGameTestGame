@@ -16,28 +16,21 @@ namespace Project1.Scenes
     public class WorldTestScene : Scene
     {
 
+        SceneData _sceneData;
         CameraMatrix _cameraMatrix;
         TileMapLayered _tileMapGround;
         EffectsManager _fogEffect;
         BattleScene _battleScene;
         float _time;
 
-        SceneData _sceneData;
-        public override string SceneName { get; set; } = "WorldTestScene";
-
+        protected const string ShaderParamTimeName = "time";
         public bool IsInBattle { get; set; } = false;
         public bool IsPaused { get; set; } = false;
 
+        public override string SceneName { get; set; } = "WorldTestScene";
         protected PlayerManager PlayerManager { get; set; }
+        protected SceneData SceneData => _sceneData;
 
-        protected const string ShaderParamTimeName = "time";
-        /*
-        protected virtual string MapXMLFile { set; get; } = "Content/Tiles/TestTileMap1.xml";
-        protected virtual string MapTexture { set; get; } = "Images/TileMap";
-        protected virtual string Layer { set; get; } = "Ground";
-        protected virtual string EffectsPath { set; get; } = "Effects/FBM";
-        protected virtual float LayerScale { set; get; } = 2;
-        */
         public WorldTestScene(PlayerManager playerManager, SceneData sceneData)
         {
             PlayerManager = playerManager;
@@ -76,7 +69,7 @@ namespace Project1.Scenes
             {
                 var playerManager = PlayerManager
                     .WithPosition(new Vector2(0, 0));
-                Core.ChangeScene(new WorldTestScene2(playerManager));
+                Core.ChangeScene(new WorldTestScene2(playerManager, new SceneData()));
                 return;
             }
 

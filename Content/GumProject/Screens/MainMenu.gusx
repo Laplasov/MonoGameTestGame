@@ -461,49 +461,49 @@
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>DeleteCurrentLoad.Parent</Name>
+      <Name>LoadCurrent.Parent</Name>
       <Value xsi:type="xsd:string">ContainerInstance2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>DeleteCurrentLoad.Text</Name>
+      <Name>LoadCurrent.Text</Name>
       <Value xsi:type="xsd:string">Load</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>DeleteCurrentLoad.X</Name>
+      <Name>LoadCurrent.X</Name>
       <Value xsi:type="xsd:float">117</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
-      <Name>DeleteCurrentLoad.XOrigin</Name>
+      <Name>LoadCurrent.XOrigin</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>DeleteCurrentLoad.XUnits</Name>
+      <Name>LoadCurrent.XUnits</Name>
       <Value xsi:type="xsd:int">6</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>DeleteCurrentLoad.Y</Name>
+      <Name>LoadCurrent.Y</Name>
       <Value xsi:type="xsd:float">-55</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
-      <Name>DeleteCurrentLoad.YOrigin</Name>
+      <Name>LoadCurrent.YOrigin</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>DeleteCurrentLoad.YUnits</Name>
+      <Name>LoadCurrent.YUnits</Name>
       <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -1724,7 +1724,7 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
-    <Name>DeleteCurrentLoad</Name>
+    <Name>LoadCurrent</Name>
     <BaseType>Controls/ButtonStandard</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>

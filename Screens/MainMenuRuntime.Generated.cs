@@ -37,7 +37,7 @@ partial class MainMenuRuntime : global::MonoGameGum.GueDeriving.ContainerRuntime
     public TextRuntime TextInstance2 { get; protected set; }
     public ListBoxNewCastomRuntime ListBoxInstance { get; protected set; }
     public ButtonStandardRuntime ExitLoad { get; protected set; }
-    public ButtonStandardRuntime DeleteCurrentLoad { get; protected set; }
+    public ButtonStandardRuntime LoadCurrent { get; protected set; }
     public ButtonStandardRuntime DeleteLoad { get; protected set; }
     public ButtonStandardRuntime DeleteAllLoad { get; protected set; }
     public ContainerRuntime ContainerInstance { get; protected set; }
@@ -78,7 +78,7 @@ partial class MainMenuRuntime : global::MonoGameGum.GueDeriving.ContainerRuntime
         TextInstance2 = this.GetGraphicalUiElementByName("TextInstance2") as global::MonoGameGum.GueDeriving.TextRuntime;
         ListBoxInstance = this.GetGraphicalUiElementByName("ListBoxInstance") as Project1.Components.Castom.ListBoxNewCastomRuntime;
         ExitLoad = this.GetGraphicalUiElementByName("ExitLoad") as Project1.Components.Controls.ButtonStandardRuntime;
-        DeleteCurrentLoad = this.GetGraphicalUiElementByName("DeleteCurrentLoad") as Project1.Components.Controls.ButtonStandardRuntime;
+        LoadCurrent = this.GetGraphicalUiElementByName("LoadCurrent") as Project1.Components.Controls.ButtonStandardRuntime;
         DeleteLoad = this.GetGraphicalUiElementByName("DeleteLoad") as Project1.Components.Controls.ButtonStandardRuntime;
         DeleteAllLoad = this.GetGraphicalUiElementByName("DeleteAllLoad") as Project1.Components.Controls.ButtonStandardRuntime;
         ContainerInstance = this.GetGraphicalUiElementByName("ContainerInstance") as global::MonoGameGum.GueDeriving.ContainerRuntime;

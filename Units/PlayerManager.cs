@@ -18,7 +18,7 @@ namespace Project1.Units
     public class PlayerManager : ITrackable
     {
         protected virtual string PlayerAtlasXML { set; get; } = "Atlases/CharacterAtlas.xml";
-        protected virtual string PlayerName { set; get; } = "Player";
+        public virtual string PlayerName { set; get; } = "Player";
 
         private TextureAtlas _characterAtlas;
         private MovementController _movementController;
@@ -36,6 +36,11 @@ namespace Project1.Units
         public PlayerManager WithPosition(Vector2 vec)
         {
             Position = vec;
+            return this;
+        }
+        public PlayerManager WithName(string name)
+        {
+            PlayerName = name;
             return this;
         }
         public void CreateUnits()
