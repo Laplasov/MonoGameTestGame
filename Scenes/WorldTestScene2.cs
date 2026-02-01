@@ -11,14 +11,14 @@ using System.Threading.Tasks;
 
 namespace Project1.Scenes
 {
-    public class WorldTestScene2 : WorldTestScene
+    public class WorldTestScene2 : WorldScene
     {
         public WorldTestScene2(PlayerManager playerManager, SceneData sceneData) : base(playerManager, sceneData)
         {
             SceneName = "WorldTestScene2";
             sceneData.MapXMLFile = "Content/Tiles/TestTileMap2.xml";
             sceneData.MapTexture = "Images/TileMap";
-            sceneData.Layer = "Ground";
+            sceneData.GroundLayer = "Ground";
             sceneData.EffectsPath = "Effects/FBM";
             sceneData.LayerScale = 1;
         }

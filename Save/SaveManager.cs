@@ -10,6 +10,7 @@ using Project1.Units;
 using System;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Xml.Serialization;
 using ListBox = Gum.Forms.Controls.ListBox;
 using TextBox = Gum.Forms.Controls.TextBox;
 
@@ -23,6 +24,8 @@ namespace Project1.Save
         private const string TextFieldName = "TextBoxCastomInstance";
         private const string FrontSprite = "down_1";
         private const string TimeFormat = "yy.MM.dd HH:mm";
+        private const string ScenesXML = "ScenesXML";
+        private const string BaseSceneXML = "BaseScene.xml";
 
         public void PopulateListBoxFromXML()
         {
@@ -73,7 +76,7 @@ namespace Project1.Save
 
             if (textField == null || string.IsNullOrWhiteSpace(textField.Text)) return null;
 
-            var newSceneInstant = new SceneData();
+            var newSceneInstant = LoadSceneXML(BaseSceneXML);
             var newSave = new SaveGame
             {
                 SaveName = saveName,
@@ -200,9 +203,13 @@ namespace Project1.Save
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(SaveGameList));
                 saveList = (SaveGameList)serializer.Deserialize(stream);
             }
+            if (selectedIndex >= saveList.Items.Count || selectedIndex < 0)
+            {
+                return null;
+            }
 
-             return saveList.Items[selectedIndex];
-        
+            return saveList.Items[selectedIndex];
+
         }
 
         public static void SaveGame(PlayerManager playerManager, SceneData sceneInstant)
@@ -232,6 +239,17 @@ namespace Project1.Save
             {
                 var serializer = new System.Xml.Serialization.XmlSerializer(typeof(SaveGameList));
                 serializer.Serialize(stream, saveList);
+            }
+        }
+        public static SceneData LoadSceneXML(string SceneName)
+        {
+            string scenePath = System.IO.Path.Combine(GameCore.Content.RootDirectory, ScenesXML, SceneName);
+
+            using (var stream = System.IO.File.OpenRead(scenePath))
+            {
+                var serializer = new XmlSerializer(typeof(SceneData));
+                var sceneData = (SceneData)serializer.Deserialize(stream);
+                return sceneData;
             }
         }
     }

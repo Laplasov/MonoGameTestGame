@@ -319,3 +319,6 @@ C:\Users\Yandere312\Desktop\MonoGames\Test2\Project1\bin\Debug\net8.0\Content\Gu
 C:\Users\Yandere312\Desktop\MonoGames\Test2\Project1\bin\Debug\net8.0\Content\Save\SaveFile.xml
 C:\Users\Yandere312\Desktop\MonoGames\Test2\Project1\bin\Debug\net8.0\Content\GumProject\Components\Castom\TextBoxCastomNew.gucx
 C:\Users\Yandere312\Desktop\MonoGames\Test2\Project1\bin\Debug\net8.0\Content\GumProject\Components\Castom\TextBoxCastomNewAnimations.ganx
+C:\Users\Yandere312\Desktop\MonoGames\Test2\Project1\bin\Debug\net8.0\Content\ScenesXML\BaseScene.xml
+C:\Users\Yandere312\Desktop\MonoGames\Test2\Project1\bin\Debug\net8.0\Content\GumProject\TileMaps\Tiled\Marks.tsx
+C:\Users\Yandere312\Desktop\MonoGames\Test2\Project1\bin\Debug\net8.0\Content\ScenesXML\TestScene.xml

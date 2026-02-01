@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<XnaContent xmlns:ns="Microsoft.Xna.Framework">
-	<Asset Type="Project1.SaveGame[]">
-		<Item>
-			<SaveName>Save Slot 1</SaveName>
-		</Item>
-		<Item>
-			<SaveName>Save Slot 2</SaveName>
-		</Item>
-		<Item>
-			<SaveName>Save Slot 3</SaveName>
-		</Item>
-	</Asset>
-</XnaContent>
+<SaveGameList>
+	<Items>
+		
+	</Items>
+</SaveGameList>

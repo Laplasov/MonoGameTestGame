@@ -85,6 +85,12 @@
 #begin Save/SaveFile.xml
 /copy:Save/SaveFile.xml
 
+#begin ScenesXML/BaseScene.xml
+/copy:ScenesXML/BaseScene.xml
+
+#begin ScenesXML/TestScene.xml
+/copy:ScenesXML/TestScene.xml
+
 #begin Tiles/TestTileMap1.xml
 /copy:Tiles/TestTileMap1.xml
 

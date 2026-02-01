@@ -86,17 +86,19 @@ namespace Project1.Scenes
                 .WithPosition(newSave.SceneData.Position)
                 .WithName(newSave.SaveName);
             playerManager.CreateUnits();
-            Core.ChangeScene(new WorldTestScene(playerManager, newSave.SceneData));
+            Core.ChangeScene(new WorldScene(playerManager, newSave.SceneData));
             GameCore.UnloadCurrentUI();
         }
         void LoadGame(object sender, EventArgs e) => LoadGame();
         void LoadGame()
         {
             SaveGame load = _saveManager.GetSelectedSaveData();
+            if(load == null) return;
+
             var playerManager = new PlayerManager()
                 .WithPosition(load.SceneData.Position);
             playerManager.CreateUnits();
-            Core.ChangeScene(new WorldTestScene(playerManager, load.SceneData));
+            Core.ChangeScene(new WorldScene(playerManager, load.SceneData));
             GameCore.UnloadCurrentUI();
         }
 

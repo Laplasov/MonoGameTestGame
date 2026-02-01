@@ -11,7 +11,7 @@
     "fileStates": {
         "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap1.xml": {
             "scale": 0.6,
-            "selectedLayer": 2,
+            "selectedLayer": 3,
             "viewCenter": {
                 "x": 640.8333333333334,
                 "y": 639.1666666666667
@@ -19,9 +19,9 @@
         },
         "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap2.xml": {
             "scale": 1.6142578125,
-            "selectedLayer": 0,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 159.82577132486392,
+                "x": 159.51603145795525,
                 "y": 255.84513006654566
             }
         },
@@ -33,20 +33,24 @@
                 "y": 255.84513006654566
             }
         },
+        "Marks.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "TestTileMap1.tmx": {
             "scale": 0.6,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 640,
-                "y": 640.8333333333334
+                "x": 589.1666666666666,
+                "y": 640.0000000000001
             }
         },
         "TestTileMapBattle1tmx.tmx": {
             "scale": 1.6142578125,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 159.82577132486392,
-                "y": 255.84513006654566
+                "x": 159.8257713248639,
+                "y": 256.15486993345434
             }
         },
         "TileSet1.tsx": {
@@ -62,16 +66,19 @@
     "map.width": 5,
     "openFiles": [
         "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap1.xml",
+        "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap2.xml",
         "TileSet1.tsx",
-        "TestTileMap1.tmx",
-        "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap2.xml"
+        "TestTileMapBattle1tmx.tmx",
+        "Marks.tsx"
     ],
     "project": "TestMap.tiled-project",
     "recentFiles": [
         "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap1.xml",
+        "Marks.tsx",
+        "TestTileMapBattle1tmx.tmx",
         "TileSet1.tsx",
-        "TestTileMap1.tmx",
         "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMap2.xml",
+        "TestTileMap1.tmx",
         "C:/Users/Yandere312/Desktop/MonoGames/Test2/Project1/Content/Tiles/TestTileMapBattle1tmx.xml"
     ],
     "tileset.lastUsedFormat": "tsx",

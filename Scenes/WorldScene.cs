@@ -3,17 +3,15 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame_Game_Library;
 using MonoGame_Game_Library.Camera;
-using MonoGame_Game_Library.Graphics;
-using MonoGame_Game_Library.Input;
 using MonoGame_Game_Library.Scenes;
 using MonoGame_Game_Library.TileLogic;
-using MonoGameGum.Forms;
 using Project1.Save;
 using Project1.Units;
+using Project1.Logic;
 
 namespace Project1.Scenes
 {
-    public class WorldTestScene : Scene
+    public class WorldScene : Scene
     {
 
         SceneData _sceneData;
@@ -24,14 +22,20 @@ namespace Project1.Scenes
         float _time;
 
         protected const string ShaderParamTimeName = "time";
+        protected const string CollisionLayer = "Collisions";
+        protected const string EventLayer = "Events";
+
         public bool IsInBattle { get; set; } = false;
         public bool IsPaused { get; set; } = false;
 
         public override string SceneName { get; set; } = "WorldTestScene";
-        protected PlayerManager PlayerManager { get; set; }
-        protected SceneData SceneData => _sceneData;
+        public PlayerManager PlayerManager { get; set; }
 
-        public WorldTestScene(PlayerManager playerManager, SceneData sceneData)
+        protected CollisionLogic _collisionLogic;
+        protected TransitionHandler _transitionHandler;
+        public SceneData SceneData => _sceneData;
+
+        public WorldScene(PlayerManager playerManager, SceneData sceneData)
         {
             PlayerManager = playerManager;
             _sceneData = sceneData;
@@ -59,17 +63,21 @@ namespace Project1.Scenes
             _battleScene = new BattleScene(PlayerManager);
             _battleScene.Initialize();
             _battleScene.LoadContent();
+
+            //Set collision
+            _collisionLogic = new CollisionLogic(PlayerManager, _tileMapGround.Layers[CollisionLayer], SceneData.LayerScale);
+
+            //Set transition handler
+            _transitionHandler = new TransitionHandler(PlayerManager, _tileMapGround.Layers[EventLayer], this, SceneData.LayerScale);
         }
 
         public override void Update(GameTime gameTime)
         {
             if (Core.Input.Keyboard.WasKeyJustPressed(Keys.E)) IsInBattle = !IsInBattle;
 
-            if (Core.Input.Keyboard.WasKeyJustPressed(Keys.T))
+            if (Core.Input.Keyboard.WasKeyJustPressed(Keys.F4))
             {
-                var playerManager = PlayerManager
-                    .WithPosition(new Vector2(0, 0));
-                Core.ChangeScene(new WorldTestScene2(playerManager, new SceneData()));
+                SaveManager.SaveGame(PlayerManager, _sceneData);
                 return;
             }
 
@@ -87,6 +95,9 @@ namespace Project1.Scenes
             _time += (float)gameTime.ElapsedGameTime.TotalSeconds;
             _fogEffect.SetParameter(ShaderParamTimeName, _time);
             PlayerManager.Update(gameTime);
+
+            _collisionLogic.CheckCollision();
+            _transitionHandler.CheckTransition();
         }
 
         public override void Draw(GameTime gameTime)
@@ -99,7 +110,7 @@ namespace Project1.Scenes
 
             Core.SpriteBatch.Begin(transformMatrix: _cameraMatrix.GetMatrix(), samplerState: SamplerState.PointClamp);
 
-            _tileMapGround.DrawLayer(Core.SpriteBatch, _sceneData.Layer, Vector2.Zero, _sceneData.LayerScale);
+            _tileMapGround.DrawLayer(Core.SpriteBatch, _sceneData.GroundLayer, Vector2.Zero, _sceneData.LayerScale);
             PlayerManager.Draw();
 
             Core.SpriteBatch.End();

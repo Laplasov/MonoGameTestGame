@@ -2,18 +2,24 @@
 <SaveGameList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Items>
     <SaveGame>
-      <SaveName>hjghj</SaveName>
-      <Location>WorldTestScene</Location>
-      <SaveTime>2026-01-30T04:57:09.1838879+03:00</SaveTime>
+      <SaveName>zzzzzzzzzz</SaveName>
+      <Location>TestScene</Location>
+      <SaveTime>2026-02-01T04:49:22.4861341+03:00</SaveTime>
       <SceneData>
-        <SceneName>WorldTestScene</SceneName>
-        <MapXMLFile>Content/Tiles/TestTileMap1.xml</MapXMLFile>
+        <SceneName>TestScene</SceneName>
+        <MapXMLFile>Content/Tiles/TestTileMap2.xml</MapXMLFile>
         <MapTexture>Images/TileMap</MapTexture>
-        <Layer>Ground</Layer>
+        <GroundLayer>Ground</GroundLayer>
         <EffectsPath>Effects/FBM</EffectsPath>
         <LayerScale>2</LayerScale>
-        <PositionX>800</PositionX>
-        <PositionY>600</PositionY>
+        <PositionX>271.41354</PositionX>
+        <PositionY>530.4528</PositionY>
+        <Transitions>
+          <SceneTransition>
+            <TileId>131</TileId>
+            <TargetSceneName>BaseScene.xml</TargetSceneName>
+          </SceneTransition>
+        </Transitions>
       </SceneData>
       <PlayerAtlasXML>Atlases/CharacterAtlas.xml</PlayerAtlasXML>
     </SaveGame>
