@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using MonoGame_Game_Library;
 using MonoGame_Game_Library.Graphics;
 using MonoGame_Game_Library.TileLogic;
+using Project1.Units.Visuals;
 
 namespace Project1.Units
 {
@@ -37,7 +38,7 @@ namespace Project1.Units
             Name = name;
             Position = position;
         }
-        public void SetAnimation(TextureAtlas textureAtlas, float angleOffset = -MathHelper.PiOver2)
+        public void SetAnimation(TextureAtlas textureAtlas, float angleOffset)
         {
             _textureAtlas = textureAtlas;
             _animationController = new AnimationController(_textureAtlas, angleOffset: angleOffset);

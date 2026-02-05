@@ -16,6 +16,9 @@
 #begin Atlases/CharacterAtlas.xml
 /copy:Atlases/CharacterAtlas.xml
 
+#begin Bestiary/Bestiary.xml
+/copy:Bestiary/Bestiary.xml
+
 #begin Effects/Effect1.fx
 /importer:EffectImporter
 /processor:EffectProcessor

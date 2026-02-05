@@ -6,6 +6,7 @@ using MonoGame_Game_Library.Graphics;
 using MonoGame_Game_Library.Scenes;
 using MonoGame_Game_Library.TileLogic;
 using Project1.Units;
+using Project1.Units.Visuals;
 using System.Collections.Generic;
 
 namespace Project1.Scenes
@@ -40,14 +41,24 @@ namespace Project1.Scenes
             _terrainRenderer = new TerrainRenderer(Core.GraphicsDevice);
             _terrainRenderer.LoadFromTileMap(_tileMap, Layer);
 
+
+
+        }
+        public void SetEnemies(List<UnitProfile> enemy)
+        {
+            _units.Clear();
+
             foreach (var unit in _player.UnitList)
             {
                 unit.SetView(_tileMap);
                 _units.Add(unit);
             }
-
+            foreach (var unit in enemy)
+            {
+                unit.SetView(_tileMap);
+                _units.Add(unit);
+            }
         }
-
         public override void Update(GameTime gameTime)
         {
             _cameraManage.Update(_tileMap);

@@ -1,38 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using MonoGame_Game_Library;
-using MonoGame_Game_Library.Camera;
-using MonoGame_Game_Library.Graphics;
-using RenderingLibrary.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project1.Units
 {
-    public class PlayerManager : ITrackable
+    public class PlayerManager : UnitBaseManager
     {
-        protected virtual string PlayerAtlasXML { set; get; } = "Atlases/CharacterAtlas.xml";
-        public virtual string PlayerName { set; get; } = "Player";
-
-        private TextureAtlas _characterAtlas;
-        private MovementController _movementController;
-        private AnimationController _animationController;
-
-        public List<UnitProfile> UnitList = new List<UnitProfile>();
-
-        public Vector2 Position { get; set; } = Vector2.Zero;
-        public bool LockPosition { get; set; } = false;
-        public Vector2 Velocity => _movementController.Velocity;
-        public float Speed => _movementController.Speed;
-        public float Decay => _movementController.Decay;
-
-        public PlayerManager() {}
+        protected override string PlayerAtlasXML { set; get; } = "Atlases/CharacterAtlas.xml";
+        public override string PlayerName { set; get; } = "Player";
+        public PlayerManager() { }
         public PlayerManager WithPosition(Vector2 vec)
         {
             Position = vec;
@@ -43,35 +18,15 @@ namespace Project1.Units
             PlayerName = name;
             return this;
         }
-        public void CreateUnits()
+        public override void CreateUnits()
         {
-            var playerUnit = new UnitProfile(PlayerName, new Vector2(1, 1));
-            UnitList.Add(playerUnit);
-        }
-        public void Load(ContentManager Content)
-        {
-            _characterAtlas = TextureAtlas.FromFile(Content, PlayerAtlasXML);
-            _movementController = new MovementController(InputHandel);
-            _animationController = new AnimationController(_characterAtlas, angleOffset: -MathHelper.PiOver2);
-
-            foreach (var unit in UnitList) 
+            foreach (var unit in UnitPositions)
             {
-                unit.SetAnimation(_characterAtlas);
+                var playerUnit = new UnitProfile(PlayerName, unit.Value);
+                UnitList.Add(playerUnit);
             }
-
         }
-        public void Update(GameTime gameTime)
-        {
-            if (LockPosition) 
-                return;
-
-            Vector2 movement = _movementController.Update(gameTime);
-            Position += Velocity;
-            _animationController.UpdateWorld(gameTime, Velocity, movement);
-        }
-        public void Draw() => _animationController.Draw(Core.SpriteBatch, Position);
-
-        private Vector2 InputHandel()
+        protected override Vector2 InputHandel(GameTime gameTime)
         {
             Vector2 movement = Vector2.Zero;
             if (Keyboard.GetState().IsKeyDown(Keys.A)) movement.X -= 1;

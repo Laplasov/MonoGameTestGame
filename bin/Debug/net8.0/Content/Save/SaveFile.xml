@@ -2,24 +2,46 @@
 <SaveGameList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Items>
     <SaveGame>
-      <SaveName>zzzzzzzzzz</SaveName>
-      <Location>TestScene</Location>
-      <SaveTime>2026-02-01T04:49:22.4861341+03:00</SaveTime>
+      <SaveName>xxxxxxxxx</SaveName>
+      <Location>BaseScene</Location>
+      <SaveTime>2026-02-05T05:39:54.4417292+03:00</SaveTime>
       <SceneData>
-        <SceneName>TestScene</SceneName>
-        <MapXMLFile>Content/Tiles/TestTileMap2.xml</MapXMLFile>
+        <SceneName>BaseScene</SceneName>
+        <MapXMLFile>Content/Tiles/TestTileMap1.xml</MapXMLFile>
         <MapTexture>Images/TileMap</MapTexture>
         <GroundLayer>Ground</GroundLayer>
         <EffectsPath>Effects/FBM</EffectsPath>
         <LayerScale>2</LayerScale>
-        <PositionX>271.41354</PositionX>
-        <PositionY>530.4528</PositionY>
+        <PositionX>500</PositionX>
+        <PositionY>300</PositionY>
         <Transitions>
           <SceneTransition>
-            <TileId>131</TileId>
-            <TargetSceneName>BaseScene.xml</TargetSceneName>
+            <TileId>132</TileId>
+            <TargetSceneName>TestScene.xml</TargetSceneName>
           </SceneTransition>
         </Transitions>
+        <EnemySpawns>
+          <EnemySpawn TileId="111" EnemyName="Slime" MovementPattern="Stationary">
+            <Unit Name="Slime" Index="1" />
+            <Unit Name="Slime" Index="2" />
+            <Unit Name="Slime" Index="3" />
+          </EnemySpawn>
+          <EnemySpawn TileId="112" EnemyName="Goblin" MovementPattern="Stationary">
+            <Unit Name="Goblin" Index="1" />
+            <Unit Name="Goblin" Index="2" />
+            <Unit Name="Goblin" Index="3" />
+          </EnemySpawn>
+          <EnemySpawn TileId="113" EnemyName="Goblin" MovementPattern="Stationary">
+            <Unit Name="Goblin" Index="1" />
+            <Unit Name="Goblin" Index="2" />
+            <Unit Name="Goblin" Index="3" />
+          </EnemySpawn>
+          <EnemySpawn TileId="114" EnemyName="Slime" MovementPattern="Stationary">
+            <Unit Name="Slime" Index="1" />
+            <Unit Name="Slime" Index="2" />
+            <Unit Name="Slime" Index="3" />
+          </EnemySpawn>
+        </EnemySpawns>
       </SceneData>
       <PlayerAtlasXML>Atlases/CharacterAtlas.xml</PlayerAtlasXML>
     </SaveGame>

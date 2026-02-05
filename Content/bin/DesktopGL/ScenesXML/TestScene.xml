@@ -6,7 +6,7 @@
 	<GroundLayer>Ground</GroundLayer>
 	<EffectsPath>Effects/FBM</EffectsPath>
 	<LayerScale>2</LayerScale>
-	<PositionX>500</PositionX>
+	<PositionX>300</PositionX>
 	<PositionY>300</PositionY>
 	<Transitions>
 		<SceneTransition>

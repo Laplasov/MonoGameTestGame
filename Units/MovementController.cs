@@ -13,16 +13,16 @@ namespace Project1.Units
         public bool LockPosition { get; set; } = false;
 
         // Delegate for getting movement input
-        public Func<Vector2> GetMovementInput { get; set; }
+        public Func<GameTime, Vector2> GetMovementInput { get; set; }
 
-        public MovementController(Func<Vector2> movementInputGetter) => GetMovementInput = movementInputGetter ?? throw new ArgumentNullException(nameof(movementInputGetter));
+        public MovementController(Func<GameTime, Vector2> movementInputGetter) => GetMovementInput = movementInputGetter ?? throw new ArgumentNullException(nameof(movementInputGetter));
         public void Reset() => _velocity = Vector2.Zero;
         public Vector2 Update(GameTime gameTime)
         {
             if (LockPosition) return _velocity;
 
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            Vector2 movement = GetMovementInput?.Invoke() ?? Vector2.Zero;
+            Vector2 movement = GetMovementInput?.Invoke(gameTime) ?? Vector2.Zero;
 
             // Handle X axis
             if (movement.X != 0)

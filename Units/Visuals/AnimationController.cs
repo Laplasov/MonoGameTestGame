@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using MonoGame_Game_Library.Graphics;
 using System;
 
-namespace Project1.Units
+namespace Project1.Units.Visuals
 {
     public class AnimationController
     {

@@ -8,6 +8,7 @@ using MonoGame_Game_Library.TileLogic;
 using Project1.Save;
 using Project1.Units;
 using Project1.Logic;
+using Project1.Save.Bestiary;
 
 namespace Project1.Scenes
 {
@@ -16,7 +17,7 @@ namespace Project1.Scenes
 
         SceneData _sceneData;
         CameraMatrix _cameraMatrix;
-        TileMapLayered _tileMapGround;
+        TileMapLayered _tileMap;
         EffectsManager _fogEffect;
         BattleScene _battleScene;
         float _time;
@@ -24,6 +25,7 @@ namespace Project1.Scenes
         protected const string ShaderParamTimeName = "time";
         protected const string CollisionLayer = "Collisions";
         protected const string EventLayer = "Events";
+        protected const string SpawnLayer = "Spowns";
 
         public bool IsInBattle { get; set; } = false;
         public bool IsPaused { get; set; } = false;
@@ -33,6 +35,8 @@ namespace Project1.Scenes
 
         protected CollisionLogic _collisionLogic;
         protected TransitionHandler _transitionHandler;
+        protected EnemySceneCollection _enemyCollection;
+        protected ProximityCollisionDetector _proximityDetector;
         public SceneData SceneData => _sceneData;
 
         public WorldScene(PlayerManager playerManager, SceneData sceneData)
@@ -47,14 +51,14 @@ namespace Project1.Scenes
             //Visuals
             _cameraMatrix = new CameraMatrix(Core.Graphics);
             _fogEffect = new EffectsManager(Content, _sceneData.EffectsPath);
-            _tileMapGround = TileMapLayered.LoadFromXml(_sceneData.MapXMLFile);
+            _tileMap = TileMapLayered.LoadFromXml(_sceneData.MapXMLFile);
 
             //Looking on player
             _cameraMatrix.TrackTarget(PlayerManager);
 
             //Set texture for ground
             var tileSetTextureGround = Content.Load<Texture2D>(_sceneData.MapTexture);
-            _tileMapGround.SetTilesetForAllLayers(tileSetTextureGround, _tileMapGround.TileWidth, _tileMapGround.TileHeight);
+            _tileMap.SetTilesetForAllLayers(tileSetTextureGround, _tileMap.TileWidth, _tileMap.TileHeight);
 
             //Set player for scene
             PlayerManager.Load(Content);
@@ -65,10 +69,16 @@ namespace Project1.Scenes
             _battleScene.LoadContent();
 
             //Set collision
-            _collisionLogic = new CollisionLogic(PlayerManager, _tileMapGround.Layers[CollisionLayer], SceneData.LayerScale);
+            _collisionLogic = new CollisionLogic(PlayerManager, _tileMap.Layers[CollisionLayer], SceneData.LayerScale);
 
             //Set transition handler
-            _transitionHandler = new TransitionHandler(PlayerManager, _tileMapGround.Layers[EventLayer], this, SceneData.LayerScale);
+            _transitionHandler = new TransitionHandler(PlayerManager, _tileMap.Layers[EventLayer], this, SceneData.LayerScale);
+
+            //Set enemy events
+            _enemyCollection = new EnemySceneCollection(PlayerManager, _tileMap.Layers[SpawnLayer], SceneData, Content);
+            _enemyCollection.Load(Content);
+
+            _proximityDetector = new ProximityCollisionDetector(PlayerManager, _enemyCollection, detectionRange: 64f);
         }
 
         public override void Update(GameTime gameTime)
@@ -96,8 +106,18 @@ namespace Project1.Scenes
             _fogEffect.SetParameter(ShaderParamTimeName, _time);
             PlayerManager.Update(gameTime);
 
+            _enemyCollection.Update(gameTime);
+
             _collisionLogic.CheckCollision();
             _transitionHandler.CheckTransition();
+
+            var nearbyEnemy = _proximityDetector.CheckProximity();
+            if (nearbyEnemy != null)
+            {
+                _battleScene.SetEnemies(nearbyEnemy.UnitList);
+                IsInBattle = true;
+                _enemyCollection.RemoveEnemy(nearbyEnemy);
+            }
         }
 
         public override void Draw(GameTime gameTime)
@@ -110,8 +130,9 @@ namespace Project1.Scenes
 
             Core.SpriteBatch.Begin(transformMatrix: _cameraMatrix.GetMatrix(), samplerState: SamplerState.PointClamp);
 
-            _tileMapGround.DrawLayer(Core.SpriteBatch, _sceneData.GroundLayer, Vector2.Zero, _sceneData.LayerScale);
+            _tileMap.DrawLayer(Core.SpriteBatch, _sceneData.GroundLayer, Vector2.Zero, _sceneData.LayerScale);
             PlayerManager.Draw();
+            _enemyCollection.Draw();
 
             Core.SpriteBatch.End();
 

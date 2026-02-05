@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SceneData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<SceneName>WorldScene</SceneName>
+	<SceneName>BaseScene</SceneName>
 	<MapXMLFile>Content/Tiles/TestTileMap1.xml</MapXMLFile>
 	<MapTexture>Images/TileMap</MapTexture>
 	<GroundLayer>Ground</GroundLayer>

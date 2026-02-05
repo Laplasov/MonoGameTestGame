@@ -9,10 +9,9 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using MonoGame_Game_Library;
 using MonoGame_Game_Library.Scenes;
-using Project1.Units;
 using RenderingLibrary.Graphics;
 
-namespace Project1.Units
+namespace Project1.Units.Visuals
 {
     public class BattleUnitView
     {
