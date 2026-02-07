@@ -2,9 +2,9 @@
 <SaveGameList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Items>
     <SaveGame>
-      <SaveName>xxxxxxxxx</SaveName>
+      <SaveName>vvvvvvvvv</SaveName>
       <Location>BaseScene</Location>
-      <SaveTime>2026-02-05T05:39:54.4417292+03:00</SaveTime>
+      <SaveTime>2026-02-07T04:28:46.3655862+03:00</SaveTime>
       <SceneData>
         <SceneName>BaseScene</SceneName>
         <MapXMLFile>Content/Tiles/TestTileMap1.xml</MapXMLFile>
@@ -21,22 +21,22 @@
           </SceneTransition>
         </Transitions>
         <EnemySpawns>
-          <EnemySpawn TileId="111" EnemyName="Slime" MovementPattern="Stationary">
+          <EnemySpawn TileId="111" EnemyName="Slime" MovementPattern="Stationary" AggroRange="250" Speed="6">
             <Unit Name="Slime" Index="1" />
             <Unit Name="Slime" Index="2" />
             <Unit Name="Slime" Index="3" />
           </EnemySpawn>
-          <EnemySpawn TileId="112" EnemyName="Goblin" MovementPattern="Stationary">
+          <EnemySpawn TileId="112" EnemyName="Goblin" MovementPattern="Stationary" AggroRange="250" Speed="6">
             <Unit Name="Goblin" Index="1" />
             <Unit Name="Goblin" Index="2" />
             <Unit Name="Goblin" Index="3" />
           </EnemySpawn>
-          <EnemySpawn TileId="113" EnemyName="Goblin" MovementPattern="Stationary">
+          <EnemySpawn TileId="113" EnemyName="Goblin" MovementPattern="Stationary" AggroRange="250" Speed="6">
             <Unit Name="Goblin" Index="1" />
             <Unit Name="Goblin" Index="2" />
             <Unit Name="Goblin" Index="3" />
           </EnemySpawn>
-          <EnemySpawn TileId="114" EnemyName="Slime" MovementPattern="Stationary">
+          <EnemySpawn TileId="114" EnemyName="Slime" MovementPattern="Stationary" AggroRange="250" Speed="6">
             <Unit Name="Slime" Index="1" />
             <Unit Name="Slime" Index="2" />
             <Unit Name="Slime" Index="3" />

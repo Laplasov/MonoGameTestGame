@@ -60,7 +60,8 @@ namespace Project1.Units
                     _playerManager,
                     spawn,
                     template,
-                    position.Value
+                    position.Value,
+                    _sceneData
                 );
                 _enemies.Add(enemy);
             }

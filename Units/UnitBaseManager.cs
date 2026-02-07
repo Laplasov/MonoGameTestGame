@@ -22,7 +22,19 @@ namespace Project1.Units
         public Vector2 Position { get; set; } = Vector2.Zero;
         public bool LockPosition { get; set; } = false;
         public Vector2 Velocity => _movementController.Velocity;
-        public float Speed => _movementController.Speed;
+
+
+        private float _defaultSpeed = 10f; 
+        public float Speed
+        {
+            get => _movementController?.Speed ?? _defaultSpeed;
+            set
+            {
+                _defaultSpeed = value;
+                if (_movementController != null)
+                    _movementController.Speed = value;
+            }
+        }
         public float Decay => _movementController.Decay;
 
         protected virtual bool IsAlly { set; get; } = true;
@@ -67,6 +79,8 @@ namespace Project1.Units
         public virtual void Draw() => _animationController.Draw(Core.SpriteBatch, Position);
         public Rectangle GetCurrentSourceRect() => _animationController?.GetCurrentSourceRect() ?? Rectangle.Empty;
         public Vector2 GetSpriteScale() => _animationController?.Scale ?? Vector2.One;
+
+        public void ResetMovement() => _movementController.Reset();
     }
 }
 

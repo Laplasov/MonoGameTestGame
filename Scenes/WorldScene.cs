@@ -26,6 +26,7 @@ namespace Project1.Scenes
         protected const string CollisionLayer = "Collisions";
         protected const string EventLayer = "Events";
         protected const string SpawnLayer = "Spowns";
+        protected const float EnemyDetectionRange = 32f;
 
         public bool IsInBattle { get; set; } = false;
         public bool IsPaused { get; set; } = false;
@@ -78,7 +79,7 @@ namespace Project1.Scenes
             _enemyCollection = new EnemySceneCollection(PlayerManager, _tileMap.Layers[SpawnLayer], SceneData, Content);
             _enemyCollection.Load(Content);
 
-            _proximityDetector = new ProximityCollisionDetector(PlayerManager, _enemyCollection, detectionRange: 64f);
+            _proximityDetector = new ProximityCollisionDetector(PlayerManager, _enemyCollection, detectionRange: EnemyDetectionRange, layerScale: SceneData.LayerScale);
         }
 
         public override void Update(GameTime gameTime)

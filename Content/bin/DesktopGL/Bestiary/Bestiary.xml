@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<XnaContent xmlns:ns="Microsoft.Xna.Framework">
-  <Asset Type="Object">
-  </Asset>
-</XnaContent>
+<Bestiary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<EnemyTemplate>
+        <Name>Goblin</Name>
+        <AtlasXML>Atlases/CharacterAtlas.xml</AtlasXML>
+        <MovementPattern>Stationary</MovementPattern>
+        <CollisionBoxWidth>32</CollisionBoxWidth>
+        <CollisionBoxHeight>32</CollisionBoxHeight>
+  </EnemyTemplate>
+	<EnemyTemplate>
+		<Name>Slime</Name>
+		<AtlasXML>Atlases/CharacterAtlas.xml</AtlasXML>
+		<MovementPattern>Stationary</MovementPattern>
+		<CollisionBoxWidth>32</CollisionBoxWidth>
+		<CollisionBoxHeight>32</CollisionBoxHeight>
+	</EnemyTemplate>
+</Bestiary>

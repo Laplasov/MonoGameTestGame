@@ -12,6 +12,12 @@ public class EnemySpawn
     [XmlAttribute("MovementPattern")]
     public string MovementPattern { get; set; }
 
+    [XmlAttribute("AggroRange")]
+    public int AggroRange { get; set; }
+
+    [XmlAttribute("Speed")]
+    public int Speed { get; set; }
+
     [XmlElement("Unit")]
     public List<EnemySpawnUnit> Units { get; set; } = new List<EnemySpawnUnit>();
 }

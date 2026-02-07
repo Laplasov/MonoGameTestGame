@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Project1.Units;
 using System;
+using System.Collections.Generic;
 
 namespace Project1.Logic
 {
@@ -13,6 +14,7 @@ namespace Project1.Logic
         private PlayerManager _playerManager;
         private EnemySceneCollection _enemyCollection;
         private float _detectionRange;
+        private Dictionary<EnemyManager, Vector2> OriginPosition;
 
         public float DetectionRange
         {
@@ -20,18 +22,30 @@ namespace Project1.Logic
             set => _detectionRange = value;
         }
 
-        public ProximityCollisionDetector(PlayerManager playerManager, EnemySceneCollection enemyCollection, float detectionRange = 32f)
+        public ProximityCollisionDetector(PlayerManager playerManager, EnemySceneCollection enemyCollection, float detectionRange = 32f, float layerScale = 1f)
         {
             _playerManager = playerManager;
             _enemyCollection = enemyCollection;
-            _detectionRange = detectionRange;
+            _detectionRange = detectionRange * layerScale;
+
+            CollectPositions(enemyCollection);
+        }
+
+        private void CollectPositions(EnemySceneCollection enemyCollection)
+        {
+            OriginPosition = new Dictionary<EnemyManager, Vector2>();
+            foreach (var enemy in _enemyCollection.GetEnemies())
+            {
+                Vector2 enemyFeet = GetFeetPosition(enemy);
+                OriginPosition.Add(enemy, enemyFeet);
+            }
         }
 
         /// <summary>
         /// Check if player is within detection range of any enemy.
         /// Returns the closest enemy within range, or null if none found.
         /// </summary>
-        public EnemyManager CheckProximity()
+        public EnemyManager CheckProximity(bool original = false)
         {
             Vector2 playerFeet = GetFeetPosition(_playerManager);
 
@@ -40,7 +54,7 @@ namespace Project1.Logic
 
             foreach (var enemy in _enemyCollection.GetEnemies())
             {
-                Vector2 enemyFeet = GetFeetPosition(enemy);
+                Vector2 enemyFeet = original ? OriginPosition[enemy] : GetFeetPosition(enemy);
 
                 // Calculate distance between feet positions
                 float distance = Vector2.Distance(playerFeet, enemyFeet);
