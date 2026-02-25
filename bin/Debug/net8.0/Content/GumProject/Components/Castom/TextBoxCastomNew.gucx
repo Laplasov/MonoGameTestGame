@@ -66,9 +66,21 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>CaretInstance.Blue</Name>
+      <Value xsi:type="xsd:int">69</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ColorCategory</Type>
       <Name>CaretInstance.ColorCategoryState</Name>
       <Value xsi:type="xsd:string">Primary</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CaretInstance.Green</Name>
+      <Value xsi:type="xsd:int">90</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -87,6 +99,12 @@
       <Type>string</Type>
       <Name>CaretInstance.Parent</Name>
       <Value xsi:type="xsd:string">ClipContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CaretInstance.Red</Name>
+      <Value xsi:type="xsd:int">66</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -598,24 +616,6 @@
       <Type>float</Type>
       <Name>Width</Name>
       <Value xsi:type="xsd:float">255</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>CaretInstance.Red</Name>
-      <Value xsi:type="xsd:int">66</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>CaretInstance.Green</Name>
-      <Value xsi:type="xsd:int">90</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>CaretInstance.Blue</Name>
-      <Value xsi:type="xsd:int">69</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <VariableList xsi:type="VariableListSaveOfString">

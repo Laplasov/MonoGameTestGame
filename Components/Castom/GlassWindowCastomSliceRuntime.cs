@@ -7,9 +7,9 @@ using RenderingLibrary.Graphics;
 
 using System.Linq;
 
-namespace Project1.Screens
+namespace Project1.Components.Castom
 {
-    partial class MainMenu
+    partial class GlassWindowCastomSliceRuntime
     {
         partial void CustomInitialize()
         {

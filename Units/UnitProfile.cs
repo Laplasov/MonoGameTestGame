@@ -12,7 +12,9 @@ namespace Project1.Units
         public BattleUnitView UnitView { get; private set; }
         AnimationController _animationController;
         TextureAtlas _textureAtlas;
-        public string Name { get; set; } = "Unit1";
+        public string Name { get; set; } = "Unit";
+        public UnitStats Stats { get; set; }
+        public UnitAbilities Abilities { get; set; }
 
         private Vector2 _position = new Vector2(1, 1);
         public Vector2 Position { 
@@ -33,10 +35,12 @@ namespace Project1.Units
                 }
             }
         }
-        public UnitProfile(string name, Vector2 position)
+        public UnitProfile(string name, Vector2 position, UnitStats stats, UnitAbilities abilities)
         {
             Name = name;
             Position = position;
+            Stats = stats;
+            Abilities = abilities;
         }
         public void SetAnimation(TextureAtlas textureAtlas, float angleOffset)
         {

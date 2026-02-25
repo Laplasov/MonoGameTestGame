@@ -6,9 +6,10 @@ using MonoGame_Game_Library.Camera;
 using MonoGame_Game_Library.Scenes;
 using MonoGame_Game_Library.TileLogic;
 using Project1.Save;
-using Project1.Units;
 using Project1.Logic;
 using Project1.Save.Bestiary;
+using Project1.Units.Managers;
+using Project1.Units;
 
 namespace Project1.Scenes
 {
@@ -38,6 +39,7 @@ namespace Project1.Scenes
         protected TransitionHandler _transitionHandler;
         protected EnemySceneCollection _enemyCollection;
         protected ProximityCollisionDetector _proximityDetector;
+
         public SceneData SceneData => _sceneData;
 
         public WorldScene(PlayerManager playerManager, SceneData sceneData)
@@ -84,7 +86,12 @@ namespace Project1.Scenes
 
         public override void Update(GameTime gameTime)
         {
-            if (Core.Input.Keyboard.WasKeyJustPressed(Keys.E)) IsInBattle = !IsInBattle;
+            if (Core.Input.Keyboard.WasKeyJustPressed(Keys.E)) 
+            {
+                IsInBattle = !IsInBattle;
+                _battleScene.ResolveUI();
+            } 
+
 
             if (Core.Input.Keyboard.WasKeyJustPressed(Keys.F4))
             {
@@ -105,8 +112,8 @@ namespace Project1.Scenes
 
             _time += (float)gameTime.ElapsedGameTime.TotalSeconds;
             _fogEffect.SetParameter(ShaderParamTimeName, _time);
-            PlayerManager.Update(gameTime);
 
+            PlayerManager.Update(gameTime);
             _enemyCollection.Update(gameTime);
 
             _collisionLogic.CheckCollision();
@@ -115,6 +122,7 @@ namespace Project1.Scenes
             var nearbyEnemy = _proximityDetector.CheckProximity();
             if (nearbyEnemy != null)
             {
+                _battleScene.InitializeUI();
                 _battleScene.SetEnemies(nearbyEnemy.UnitList);
                 IsInBattle = true;
                 _enemyCollection.RemoveEnemy(nearbyEnemy);

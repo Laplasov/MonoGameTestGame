@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Abilities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Ability>
+		<Name>Base Attack</Name>
+		<Description>Simple physical attack.</Description>
+		<Range>Melee</Range>
+		<Target>Enemy</Target>
+
+		<Scales>
+			<ScaleEntry Stat="Attack" Percentage="80"/>
+		</Scales>
+
+		<Costs>
+		</Costs>
+
+		<StatusEffects>
+		</StatusEffects>
+		
+	</Ability>
+
+	<Ability>
+		<Name>Flame Strike</Name>
+		<Description>Strike with fiery power.</Description>
+		<Range>Range</Range>
+		<Target>Enemy</Target>
+
+		<Scales>
+			<ScaleEntry Stat="Attack" Percentage="50"/>
+			<ScaleEntry Stat="Magic" Percentage="50"/>
+		</Scales>
+
+		<Costs>
+			<CostEntry Type="SP" Value="10"/>
+		</Costs>
+
+		<StatusEffects>
+		</StatusEffects>
+		
+	</Ability>
+
+	<Ability>
+		<Name>Splash</Name>
+		<Description>Splash of water.</Description>
+		<Range>Range</Range>
+		<Target>Enemy</Target>
+
+		<Scales>
+			<ScaleEntry Stat="Magic" Percentage="80"/>
+		</Scales>
+
+		<Costs>
+			<CostEntry Type="SP" Value="10"/>
+		</Costs>
+
+		<StatusEffects>
+		</StatusEffects>
+
+	</Ability>
+
+</Abilities>

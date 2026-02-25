@@ -58,5 +58,27 @@ namespace Project1.Scenes
             if (_currentCameraAngle > MathHelper.TwoPi)
                 _currentCameraAngle -= MathHelper.TwoPi;
         }
+
+        public Ray GetMouseRay()
+        {
+            var mouseState = Mouse.GetState();
+            var mousePosition = new Vector2(mouseState.X, mouseState.Y);
+
+            Viewport viewport = Core.GraphicsDevice.Viewport;
+
+            // Create two points in screen space
+            Vector3 nearPoint = new Vector3(mousePosition.X, mousePosition.Y, 0);
+            Vector3 farPoint = new Vector3(mousePosition.X, mousePosition.Y, 1);
+
+            // Unproject to world space
+            Vector3 nearWorld = viewport.Unproject(nearPoint, _camera.Projection, _camera.View, _camera.World);
+            Vector3 farWorld = viewport.Unproject(farPoint, _camera.Projection, _camera.View, _camera.World);
+
+            // Create ray direction
+            Vector3 direction = farWorld - nearWorld;
+            direction.Normalize();
+
+            return new Ray(nearWorld, direction);
+        }
     }
 }

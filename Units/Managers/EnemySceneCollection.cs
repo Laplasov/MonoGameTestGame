@@ -1,14 +1,16 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using MonoGame_Game_Library.TileLogic;
 using Project1.Logic;
 using Project1.Save;
+using Project1.Save.Abilities;
 using Project1.Save.Bestiary;
+using Project1.Units.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
 
 namespace Project1.Units
 {
@@ -16,6 +18,7 @@ namespace Project1.Units
     {
         private PlayerManager _playerManager;
         private BestiaryLoader _bestiaryLoader;
+        private AbilityLoader _abilityLoader;
         private List<EnemyManager> _enemies = new List<EnemyManager>();
         private TileLayer _spawnLayer;
         private SceneData _sceneData;
@@ -28,6 +31,7 @@ namespace Project1.Units
             _spawnLayer = tileLayer;
             _sceneData = sceneData;
             _bestiaryLoader = new BestiaryLoader(content);
+            _abilityLoader = new AbilityLoader(content);
 
             SpawnEnemies();
         }
@@ -61,7 +65,9 @@ namespace Project1.Units
                     spawn,
                     template,
                     position.Value,
-                    _sceneData
+                    _sceneData,
+                    _bestiaryLoader,
+                    _abilityLoader
                 );
                 _enemies.Add(enemy);
             }

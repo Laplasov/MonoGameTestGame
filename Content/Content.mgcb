@@ -13,6 +13,9 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin AbilitiesXML/Abilities.xml
+/copy:AbilitiesXML/Abilities.xml
+
 #begin Atlases/CharacterAtlas.xml
 /copy:Atlases/CharacterAtlas.xml
 

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Abilities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Ability>
+		<Name>Base Attack</Name>
+		<Range>Melee</Range>
+		<Target>Enemy</Target>
+		<IsRandom>false</IsRandom>
+		<Type>Physical</Type>
+		<Scales>
+			<ScaleEntry>
+				<Stat>Attack</Stat>
+				<Percentage>80</Percentage>
+			</ScaleEntry>
+		</Scales>
+		<Costs>
+			<CostEntry>
+				<Type>None</Type>
+				<Value>0</Value>
+			</CostEntry>
+		</Costs>
+		<StatusEffect>
+		</StatusEffect>
+		<Description>
+			Simple physical attack.
+		</Description>
+	</Ability>
+</Abilities>

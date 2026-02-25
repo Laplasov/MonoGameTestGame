@@ -15,22 +15,22 @@
 		</SceneTransition>
 	</Transitions>
 	<EnemySpawns>
-		<EnemySpawn TileId="111" EnemyName="Slime" MovementPattern ="Stationary"  AggroRange="250">
+		<EnemySpawn TileId="111" EnemyName="Slime" MovementPattern ="Stationary" AggroRange="250" Speed="6">
 			<Unit Name="Slime" Index="1" />
 			<Unit Name="Slime" Index="2" />
 			<Unit Name="Slime" Index="3" />
 		</EnemySpawn>
-		<EnemySpawn TileId="112" EnemyName="Goblin" MovementPattern ="Stationary" AggroRange="250">
+		<EnemySpawn TileId="112" EnemyName="Goblin" MovementPattern ="Stationary" AggroRange="250" Speed="6">
 			<Unit Name="Goblin" Index="1" />
 			<Unit Name="Goblin" Index="2" />
 			<Unit Name="Goblin" Index="3" />
 		</EnemySpawn>
-		<EnemySpawn TileId="113" EnemyName="Goblin" MovementPattern ="Stationary" AggroRange="250">
+		<EnemySpawn TileId="113" EnemyName="Goblin" MovementPattern ="Stationary" AggroRange="250" Speed="6">
 			<Unit Name="Goblin" Index="1" />
 			<Unit Name="Goblin" Index="2" />
 			<Unit Name="Goblin" Index="3" />
 		</EnemySpawn>
-		<EnemySpawn TileId="114" EnemyName="Slime" MovementPattern ="Stationary" AggroRange="250">
+		<EnemySpawn TileId="114" EnemyName="Slime" MovementPattern ="Stationary" AggroRange="250" Speed="6">
 			<Unit Name="Slime" Index="1" />
 			<Unit Name="Slime" Index="2" />
 			<Unit Name="Slime" Index="3" />

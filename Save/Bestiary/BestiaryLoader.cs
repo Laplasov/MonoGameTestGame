@@ -28,6 +28,7 @@ public class BestiaryLoader
 
     public EnemyTemplate GetEnemyTemplate(string name)
     {
+        if (string.IsNullOrEmpty(name)) return null;
         return _bestiary.EnemyTemplates.FirstOrDefault(e => e.Name == name);
     }
 }

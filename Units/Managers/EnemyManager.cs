@@ -1,10 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+using MonoGame_Game_Library;
 using Project1.Save;
+using Project1.Save.Abilities;
 using Project1.Save.Bestiary;
 using System;
 
-namespace Project1.Units
+namespace Project1.Units.Managers
 {
     /// <summary>
     /// Represents a single enemy encounter on the world map
@@ -16,18 +18,22 @@ namespace Project1.Units
         private EnemyTemplate _template;
         private Vector2 _originalPosition;
         private SceneData _sceneData;
+        private BestiaryLoader _bestiaryLoader;
+        private AbilityLoader _abilityLoader;
 
         float PositionTolerance = 32f;
         private enum MovementState { Idle, Chase, Back }
         private MovementState _currentState = MovementState.Idle;
 
-        public EnemyManager(PlayerManager playerManager, EnemySpawn spawnData, EnemyTemplate template, Vector2 position, SceneData sceneData)
+        public EnemyManager(PlayerManager playerManager, EnemySpawn spawnData, EnemyTemplate template, Vector2 position, SceneData sceneData, BestiaryLoader bestiaryLoader, AbilityLoader abilityLoader)
         {
             _playerManager = playerManager;
             _spawnData = spawnData;
             _template = template;
             _originalPosition = position;
             _sceneData = sceneData;
+            _bestiaryLoader = bestiaryLoader;
+            _abilityLoader = abilityLoader;
 
             // Set base class properties
             Speed = spawnData.Speed;
@@ -46,7 +52,10 @@ namespace Project1.Units
             {
                 if (UnitPositions.TryGetValue(spawnUnit.Index, out Vector2 unitPosition))
                 {
-                    var unit = new UnitProfile(spawnUnit.Name, unitPosition);
+                    var loader = _bestiaryLoader.GetEnemyTemplate(spawnUnit.Name);
+                    UnitStats stats = loader.Stats.Clone();
+                    UnitAbilities abilities = _abilityLoader.GetAbilities(loader.Abilities);
+                    var unit = new UnitProfile(spawnUnit.Name, unitPosition, stats, abilities);
                     UnitList.Add(unit);
 
                 }

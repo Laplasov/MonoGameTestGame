@@ -1,11 +1,12 @@
-﻿using Project1.Units;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using MonoGame_Game_Library.TileLogic;
+using Project1.Units;
+using Project1.Units.Managers;
 
 namespace Project1.Logic
 {

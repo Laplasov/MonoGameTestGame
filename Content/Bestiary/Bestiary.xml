@@ -6,6 +6,17 @@
         <MovementPattern>Stationary</MovementPattern>
         <CollisionBoxWidth>32</CollisionBoxWidth>
         <CollisionBoxHeight>32</CollisionBoxHeight>
+		<Stats>
+			<MaxHealth>120</MaxHealth>
+			<MaxSpellPoints>10</MaxSpellPoints>
+			<Attack>18</Attack>
+			<Magic>10</Magic>
+			<Defense>10</Defense>
+		</Stats>
+		<Abilities>
+			<Ability>Base Attack</Ability>
+			<Ability>Flame Strike</Ability>
+		</Abilities>
   </EnemyTemplate>
 	<EnemyTemplate>
 		<Name>Slime</Name>
@@ -13,5 +24,16 @@
 		<MovementPattern>Stationary</MovementPattern>
 		<CollisionBoxWidth>32</CollisionBoxWidth>
 		<CollisionBoxHeight>32</CollisionBoxHeight>
+		<Stats>
+			<MaxHealth>120</MaxHealth>
+			<MaxSpellPoints>10</MaxSpellPoints>
+			<Attack>18</Attack>
+			<Magic>10</Magic>
+			<Defense>10</Defense>
+		</Stats>
+		<Abilities>
+			<Ability>Base Attack</Ability>
+			<Ability>Splash</Ability>
+		</Abilities>
 	</EnemyTemplate>
 </Bestiary>

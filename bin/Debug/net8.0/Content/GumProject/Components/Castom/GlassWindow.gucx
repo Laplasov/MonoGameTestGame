@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ComponentSave xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Castom/GlassWindow</Name>
+  <BaseType>Container</BaseType>
+  <State>
+    <Name>Default</Name>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>NineSliceInstance.SourceFile</Name>
+      <Value xsi:type="xsd:string">UI.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>NineSliceInstance.TextureHeight</Name>
+      <Value xsi:type="xsd:int">145</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>NineSliceInstance.TextureLeft</Name>
+      <Value xsi:type="xsd:int">17</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>NineSliceInstance.TextureTop</Name>
+      <Value xsi:type="xsd:int">17</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>NineSliceInstance.TextureWidth</Name>
+      <Value xsi:type="xsd:int">165</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>State</Type>
+      <Name>State</Name>
+      <Value xsi:type="xsd:string">Default</Value>
+      <Category>States and Visibility</Category>
+      <SetsValue>false</SetsValue>
+    </Variable>
+  </State>
+  <Instance>
+    <Name>NineSliceInstance</Name>
+    <BaseType>NineSlice</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Behaviors />
+</ComponentSave>

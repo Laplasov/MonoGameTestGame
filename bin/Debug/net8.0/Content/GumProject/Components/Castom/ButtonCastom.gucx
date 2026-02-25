@@ -7,19 +7,19 @@
     <Variable>
       <Type>int</Type>
       <Name>Background.Blue</Name>
-      <Value xsi:type="xsd:int">255</Value>
+      <Value xsi:type="xsd:int">173</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Background.Green</Name>
-      <Value xsi:type="xsd:int">255</Value>
+      <Value xsi:type="xsd:int">173</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Background.Red</Name>
-      <Value xsi:type="xsd:int">255</Value>
+      <Value xsi:type="xsd:int">173</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -52,6 +52,12 @@
       <Value xsi:type="xsd:string">Default</Value>
       <Category>States and Visibility</Category>
       <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextInstance.FontSize</Name>
+      <Value xsi:type="xsd:int">44</Value>
+      <SetsValue>true</SetsValue>
     </Variable>
   </State>
   <Instance>

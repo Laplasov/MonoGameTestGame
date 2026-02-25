@@ -6,6 +6,12 @@
         <MovementPattern>Stationary</MovementPattern>
         <CollisionBoxWidth>32</CollisionBoxWidth>
         <CollisionBoxHeight>32</CollisionBoxHeight>
+		<Stats>
+			<MaxHealth>120</MaxHealth>
+			<Attack>18</Attack>
+			<Defense>10</Defense>
+			<SpellPoints>10</SpellPoints>
+		</Stats>
   </EnemyTemplate>
 	<EnemyTemplate>
 		<Name>Slime</Name>
@@ -13,5 +19,11 @@
 		<MovementPattern>Stationary</MovementPattern>
 		<CollisionBoxWidth>32</CollisionBoxWidth>
 		<CollisionBoxHeight>32</CollisionBoxHeight>
+		<Stats>
+			<MaxHealth>120</MaxHealth>
+			<Attack>18</Attack>
+			<Defense>10</Defense>
+			<SpellPoints>10</SpellPoints>
+		</Stats>
 	</EnemyTemplate>
 </Bestiary>

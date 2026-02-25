@@ -77,6 +77,11 @@ public class GameCore : Core
         _graphicalUiElement = screen.ToGraphicalUiElement(SystemManagers.Default);
         _graphicalUiElement.AddToManagers(SystemManagers.Default);
 
+        _graphicalUiElement.Width = 0;
+        _graphicalUiElement.WidthUnits = DimensionUnitType.RelativeToParent;
+        _graphicalUiElement.Height = 0;
+        _graphicalUiElement.HeightUnits = DimensionUnitType.RelativeToParent;
+
         return _graphicalUiElement;
     }
     public static void RegisterEventCleanup(Action cleanupAction) => _eventCleanups.Add(cleanupAction);

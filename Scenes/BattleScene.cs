@@ -6,6 +6,7 @@ using MonoGame_Game_Library.Graphics;
 using MonoGame_Game_Library.Scenes;
 using MonoGame_Game_Library.TileLogic;
 using Project1.Units;
+using Project1.Units.Managers;
 using Project1.Units.Visuals;
 using System.Collections.Generic;
 
@@ -18,12 +19,17 @@ namespace Project1.Scenes
         protected virtual string Layer { set; get; } = "Ground";
         public override string SceneName { get; set; } = "BattleScene";
 
+        protected virtual string ScreenUI { set; get; } = "BattleMenu";
+
         private TerrainRenderer _terrainRenderer;
         private TileMapLayered _tileMap;
         private CameraViewManager _cameraManage;
         private PlayerManager _player;
         private BattleUnitView _playerUnit;
         private List<UnitProfile> _units = new List<UnitProfile>();
+
+        private BattleUIController _uiController;
+
         public BattleScene(PlayerManager player) => _player = player;
         public override void LoadContent()
         {
@@ -41,7 +47,7 @@ namespace Project1.Scenes
             _terrainRenderer = new TerrainRenderer(Core.GraphicsDevice);
             _terrainRenderer.LoadFromTileMap(_tileMap, Layer);
 
-
+            _uiController = new BattleUIController(_cameraManage, _units);
 
         }
         public void SetEnemies(List<UnitProfile> enemy)
@@ -58,14 +64,20 @@ namespace Project1.Scenes
                 unit.SetView(_tileMap);
                 _units.Add(unit);
             }
+
         }
         public override void Update(GameTime gameTime)
         {
             _cameraManage.Update(_tileMap);
 
+            _uiController.Update();
+
             foreach (var unit in _units)
                 unit.Update(_cameraManage.CurrentCameraAngle);
         }
+
+        public void ResolveUI() => _uiController.Resolve();
+        public void InitializeUI() => _uiController.Initialize(ScreenUI);
 
         public override void Draw(GameTime gameTime)
         {
@@ -77,6 +89,7 @@ namespace Project1.Scenes
             //Draw all units
             foreach (var unit in _units)
                 unit.Draw(_cameraManage.Camera, Core.GraphicsDevice);
+
         }
 
         void PlayerMovement()

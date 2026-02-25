@@ -22,5 +22,16 @@ namespace Project1.UI
             }
             return button;
         }
+
+        public static Button BindButton(this InteractiveGue buttonElement, EventHandler handler)
+        {
+            if (buttonElement?.FormsControlAsObject is Button button)
+            {
+                button.Click += handler;
+                GameCore.RegisterEventCleanup(() => button.Click -= handler);
+                return button;
+            }
+            return null;
+        }
     }
 }
