@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Project1.Units.BasePlayer;
+using Project1.Units.UnitProfilePlace;
 
 namespace Project1.Units
 {
@@ -25,7 +26,7 @@ namespace Project1.Units
             {
                 var baseStats = PlayerBaseStats.GetStats();
                 var baseAbility = PlayerBaseAbilities.GetAbilities();
-                var playerUnit = new UnitProfile(PlayerName, unit.Value, baseStats, baseAbility);
+                var playerUnit = new UnitProfile(PlayerName, unit.Value, baseStats, baseAbility, unit.Key, IsAlly);
                 UnitList.Add(playerUnit);
             }
         }

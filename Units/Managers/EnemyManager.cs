@@ -4,6 +4,7 @@ using MonoGame_Game_Library;
 using Project1.Save;
 using Project1.Save.Abilities;
 using Project1.Save.Bestiary;
+using Project1.Units.UnitProfilePlace;
 using System;
 
 namespace Project1.Units.Managers
@@ -55,7 +56,7 @@ namespace Project1.Units.Managers
                     var loader = _bestiaryLoader.GetEnemyTemplate(spawnUnit.Name);
                     UnitStats stats = loader.Stats.Clone();
                     UnitAbilities abilities = _abilityLoader.GetAbilities(loader.Abilities);
-                    var unit = new UnitProfile(spawnUnit.Name, unitPosition, stats, abilities);
+                    var unit = new UnitProfile(spawnUnit.Name, unitPosition, stats, abilities, spawnUnit.Index, IsAlly);
                     UnitList.Add(unit);
 
                 }

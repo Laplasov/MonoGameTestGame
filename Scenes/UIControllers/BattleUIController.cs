@@ -7,7 +7,8 @@ using Project1.Components.Castom;
 using Project1.Save;
 using Project1.Screens;
 using Project1.UI;
-using Project1.Units;
+using Project1.Units.UnitProfilePlace;
+using RenderingLibrary.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -26,11 +27,15 @@ namespace Project1.Scenes
         BattleMenuRuntime _screen;
         List<Button> _buttons;
 
+        private float _timer = 0f;
+        List<IVisible> HUD;
+
         public BattleUIController(CameraViewManager cameraManage, List<UnitProfile> units)
         {
             _cameraManage = cameraManage;
             _units = units;
             _currentUnit = null;
+            HUD = new List<IVisible>();
         }
 
         public void Initialize(string screenName)
@@ -52,21 +57,34 @@ namespace Project1.Scenes
             SetRoll(item);
             SetRoll(wait);
             SetRoll(run);
+
+            HUD.Add(_screen.EnemySlots);
+            HUD.Add(_screen.AllaySlots);
+            HUD.Add(_screen.ActionsBar);
+
+            ShowWelcome();
+
         }
+
         public void Resolve()
         {
             foreach (var button in _buttons)
             {
                 button.Visual.RollOn -= ShowDescription;
-                button.Visual.RollOff -= HideDescriptio;
+                button.Visual.RollOff -= HideDescription;
             }
             _buttons.Clear();
             GameCore.UnloadCurrentUI();
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
-            CheckUnitHover();
+            _timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (_screen.EnteringTextWindow.Visible == true)
+                UpdateWelcome();
+            else
+                CheckUnitHover();
         }
 
         private void CheckUnitHover()
@@ -117,13 +135,12 @@ namespace Project1.Scenes
 
         string SetUnitInfo(UnitProfile profile)
         {
-            var info = $"{profile.Name} \n" +
-                $"Health {profile.Stats.MaxHealth}/" +
-                $"{profile.Stats.CurrentHealth}  \n" +
-                $"SpellPoints {profile.Stats.MaxSpellPoints}/" +
-                $"{profile.Stats.CurrentSpellPoints}  \n" +
-                $"Attack {profile.Stats.Attack}  \n" +
-                $"Defense {profile.Stats.Defense}  \n";
+            var info = $"{profile.Name} \n\n" +
+                $"Health {profile.Stats.MaxHealth}/" + $"{profile.Stats.CurrentHealth}  \n" +
+                $"SpellPoints {profile.Stats.MaxSpellPoints}/" + $"{profile.Stats.CurrentSpellPoints}  \n\n" +
+                $"PYS {profile.Stats.Physic} " + $"MAG {profile.Stats.Magic} \n" + 
+                $"DEF {profile.Stats.Defense} " + $"SPD {profile.Stats.Speed}  \n\n" +
+                $"Abilities:  \n";
 
             Ability[] abilities = profile.Abilities.Abilities;
 
@@ -143,7 +160,7 @@ namespace Project1.Scenes
         void SetRoll(Button button)
         {
             button.Visual.RollOn += ShowDescription;
-            button.Visual.RollOff += HideDescriptio;
+            button.Visual.RollOff += HideDescription;
             _buttons.Add(button);
         }
 
@@ -174,11 +191,43 @@ namespace Project1.Scenes
 
         }
 
-        void HideDescriptio(object sender, EventArgs e)
+        void HideDescription(object sender, EventArgs e)
         {
             var button = sender as GraphicalUiElement;
             if (_currentButton == button)
                 _screen.DescriptionWindow.Visible = false;
+        }
+
+        public void ShowWelcome()
+        {
+            foreach (var element in HUD) 
+                element.Visible = false;
+
+            _screen.EnteringTextWindow.Visible = true;
+        }
+        public void HideWelcome()
+        {
+            foreach (var element in HUD)
+                element.Visible = true;
+
+            _screen.EnteringTextWindow.Visible = false;
+        }
+        public void UpdateWelcome()
+        {
+            float cycleDuration = 2.0f;
+            float alphaMin = 0.2f;
+            float alphaMax = 1.0f;
+
+            float cycleProgress = (_timer % cycleDuration) / cycleDuration;
+
+            float t = cycleProgress < 0.5f? cycleProgress * 2f: 2f - cycleProgress * 2f;
+
+            float alphaFloat = alphaMin + t * (alphaMax - alphaMin);
+            int alpha = (int)(alphaFloat * 255);
+
+            _screen.EnteringTextWindow.NineSliceInstance.Alpha = alpha;
+            _screen.EnteringText.Alpha = alpha;
+
         }
 
         void SkillBuitton(object sender, EventArgs e) { }

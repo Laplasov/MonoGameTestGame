@@ -36,10 +36,6 @@ namespace Project1.Scenes
         }
         public void Update(TileMapLayered tileMap)
         {
-            //Toggle rotation on R
-            if (Core.Input.Keyboard.WasKeyJustPressed(Keys.R))
-                ToggleRotation();
-
             //Add to rotation
             if (_isRotating) _currentCameraAngle += 0.01f;
             else _currentCameraAngle = _cameraAngle;
@@ -49,7 +45,13 @@ namespace Project1.Scenes
             _camera.OrbitAround(center: center, radius: _orbitRadius, angle: _currentCameraAngle, height: _orbitHeight);
         }
 
-        private void ToggleRotation()
+        public void SetRotation(bool isRotate)
+        {
+            if (_isRotating != isRotate) 
+                ToggleRotation();
+        }
+
+        public void ToggleRotation()
         {
             if (_isRotating)
                 _currentCameraAngle = _cameraAngle;

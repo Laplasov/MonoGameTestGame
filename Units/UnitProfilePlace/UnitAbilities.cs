@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project1.Units
+namespace Project1.Units.UnitProfilePlace
 {
     public class UnitAbilities
     {

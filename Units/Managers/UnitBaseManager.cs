@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Content;
 using MonoGame_Game_Library;
 using MonoGame_Game_Library.Camera;
 using MonoGame_Game_Library.Graphics;
+using Project1.Units.UnitProfilePlace;
 using Project1.Units.Visuals;
 using System.Collections.Generic;
 

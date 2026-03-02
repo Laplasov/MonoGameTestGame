@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project1.Units.UnitProfilePlace;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,11 +15,12 @@ namespace Project1.Units.BasePlayer
             {
                 MaxHealth = 100,
                 CurrentHealth = 100,
-                Attack = 10,
-                Defense = 10,
-                Magic = 10,
                 MaxSpellPoints = 10,
                 CurrentSpellPoints = 10,
+                Physic = 10,
+                Magic = 10,
+                Defense = 10,
+                Speed = 10,
             };
         }
     }

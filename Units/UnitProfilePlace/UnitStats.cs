@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project1.Units
+namespace Project1.Units.UnitProfilePlace
 {
     public class UnitStats
     {
@@ -14,9 +14,10 @@ namespace Project1.Units
         public int CurrentHealth { get; set; }
         public int MaxSpellPoints { get; set; }
         public int CurrentSpellPoints { get; set; }
-        public int Attack { get; set; }
+        public int Physic { get; set; }
         public int Defense { get; set; }
         public int Magic { get; set; }
+        public int Speed { get; set; }
 
         // Derived properties
         public bool IsAlive => CurrentHealth > 0;
@@ -27,11 +28,12 @@ namespace Project1.Units
             {
                 MaxHealth = MaxHealth,
                 CurrentHealth = MaxHealth,
-                Attack = Attack,
+                Physic = Physic,
                 Magic = Magic,
                 Defense = Defense,
                 MaxSpellPoints = MaxSpellPoints,
-                CurrentSpellPoints = MaxSpellPoints
+                CurrentSpellPoints = MaxSpellPoints,
+                Speed = Speed,
             };
         }
 

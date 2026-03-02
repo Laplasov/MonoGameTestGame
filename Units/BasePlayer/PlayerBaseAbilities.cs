@@ -1,4 +1,5 @@
 ﻿using Project1.Abilities;
+using Project1.Units.UnitProfilePlace;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +14,13 @@ namespace Project1.Units.BasePlayer
         {
             var unitAbilities = new UnitAbilities();
 
-            // 🎯 Ability 1: Base Attack
             unitAbilities.Abilities[0] = new Ability
             {
                 Name = "Base Attack",
                 Description = "Simple physical attack.",
                 Range = TargetRange.Melee,
                 Target = Target.Enemy,
-                Scales = new() { new ScaleEntry { Stat = StatType.Attack, Percentage = 80 } },
+                Scales = new() { new ScaleEntry { Stat = StatType.Physic, Percentage = 80 } },
                 Costs = new(),
                 StatusEffects = new()
             };

@@ -21,6 +21,7 @@ partial class BattleMenuRuntime : global::MonoGameGum.GueDeriving.ContainerRunti
     {
         GumRuntime.ElementSaveExtensions.RegisterGueInstantiationType("BattleMenu", typeof(BattleMenuRuntime));
     }
+    public TextRuntime EnteringText { get; protected set; }
     public SlotIconRuntime SlotEnemy4 { get; protected set; }
     public SlotIconRuntime SlotEnemy5 { get; protected set; }
     public SlotIconRuntime SlotEnemy6 { get; protected set; }
@@ -56,6 +57,7 @@ partial class BattleMenuRuntime : global::MonoGameGum.GueDeriving.ContainerRunti
     public ContainerRuntime AllaySlots { get; protected set; }
     public ContainerRuntime UnitBar { get; protected set; }
     public ContainerRuntime ActionsBar { get; protected set; }
+    public GlassWindowRuntime EnteringTextWindow { get; protected set; }
     public ContainerRuntime Root { get; protected set; }
 
     public BattleMenuRuntime(bool fullInstantiation = true, bool tryCreateFormsObject = true)
@@ -71,6 +73,7 @@ partial class BattleMenuRuntime : global::MonoGameGum.GueDeriving.ContainerRunti
     }
     public override void AfterFullCreation()
     {
+        EnteringText = this.GetGraphicalUiElementByName("EnteringText") as global::MonoGameGum.GueDeriving.TextRuntime;
         SlotEnemy4 = this.GetGraphicalUiElementByName("SlotEnemy4") as Project1.Components.Castom.SlotIconRuntime;
         SlotEnemy5 = this.GetGraphicalUiElementByName("SlotEnemy5") as Project1.Components.Castom.SlotIconRuntime;
         SlotEnemy6 = this.GetGraphicalUiElementByName("SlotEnemy6") as Project1.Components.Castom.SlotIconRuntime;
@@ -106,6 +109,7 @@ partial class BattleMenuRuntime : global::MonoGameGum.GueDeriving.ContainerRunti
         AllaySlots = this.GetGraphicalUiElementByName("AllaySlots") as global::MonoGameGum.GueDeriving.ContainerRuntime;
         UnitBar = this.GetGraphicalUiElementByName("UnitBar") as global::MonoGameGum.GueDeriving.ContainerRuntime;
         ActionsBar = this.GetGraphicalUiElementByName("ActionsBar") as global::MonoGameGum.GueDeriving.ContainerRuntime;
+        EnteringTextWindow = this.GetGraphicalUiElementByName("EnteringTextWindow") as Project1.Components.Castom.GlassWindowRuntime;
         Root = this.GetGraphicalUiElementByName("Root") as global::MonoGameGum.GueDeriving.ContainerRuntime;
         CustomInitialize();
     }

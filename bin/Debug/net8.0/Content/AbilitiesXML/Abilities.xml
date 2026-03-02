@@ -7,7 +7,7 @@
 		<Target>Enemy</Target>
 
 		<Scales>
-			<ScaleEntry Stat="Attack" Percentage="80"/>
+			<ScaleEntry Stat="Physic" Percentage="80"/>
 		</Scales>
 
 		<Costs>
@@ -25,7 +25,7 @@
 		<Target>Enemy</Target>
 
 		<Scales>
-			<ScaleEntry Stat="Attack" Percentage="50"/>
+			<ScaleEntry Stat="Physic" Percentage="50"/>
 			<ScaleEntry Stat="Magic" Percentage="50"/>
 		</Scales>
 

@@ -9,9 +9,10 @@
 		<Stats>
 			<MaxHealth>120</MaxHealth>
 			<MaxSpellPoints>10</MaxSpellPoints>
-			<Attack>18</Attack>
+			<Physic>18</Physic>
 			<Magic>10</Magic>
 			<Defense>10</Defense>
+			<Speed>10</Speed>
 		</Stats>
 		<Abilities>
 			<Ability>Base Attack</Ability>
@@ -27,9 +28,10 @@
 		<Stats>
 			<MaxHealth>120</MaxHealth>
 			<MaxSpellPoints>10</MaxSpellPoints>
-			<Attack>18</Attack>
+			<Physic>18</Physic>
 			<Magic>10</Magic>
 			<Defense>10</Defense>
+			<Speed>10</Speed>
 		</Stats>
 		<Abilities>
 			<Ability>Base Attack</Ability>

@@ -5,11 +5,12 @@ using MonoGame_Game_Library;
 using MonoGame_Game_Library.Camera;
 using MonoGame_Game_Library.Scenes;
 using MonoGame_Game_Library.TileLogic;
-using Project1.Save;
 using Project1.Logic;
+using Project1.Save;
 using Project1.Save.Bestiary;
-using Project1.Units.Managers;
+using Project1.Scenes.BattleStates;
 using Project1.Units;
+using Project1.Units.Managers;
 
 namespace Project1.Scenes
 {
@@ -67,9 +68,9 @@ namespace Project1.Scenes
             PlayerManager.Load(Content);
 
             //Create battle instanse need to be changed, events need to create them
-            _battleScene = new BattleScene(PlayerManager);
-            _battleScene.Initialize();
-            _battleScene.LoadContent();
+            //_battleScene = new BattleScene(PlayerManager);
+            //_battleScene.Initialize();
+            //_battleScene.LoadContent();
 
             //Set collision
             _collisionLogic = new CollisionLogic(PlayerManager, _tileMap.Layers[CollisionLayer], SceneData.LayerScale);
@@ -122,6 +123,9 @@ namespace Project1.Scenes
             var nearbyEnemy = _proximityDetector.CheckProximity();
             if (nearbyEnemy != null)
             {
+                _battleScene = new BattleScene(PlayerManager);
+                _battleScene.Initialize();
+                _battleScene.LoadContent();
                 _battleScene.InitializeUI();
                 _battleScene.SetEnemies(nearbyEnemy.UnitList);
                 IsInBattle = true;

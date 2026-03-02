@@ -11,7 +11,7 @@ namespace Project1.Abilities
     public enum TargetRange { Melee, Range, Self, Area, RowMelee, RowRange, Piercing, All }
     public enum Target { Enemy, Ally, All }
     public enum CostType { HP, SP, Item, Cooldown }
-    public enum StatType{ Attack, Defense, Magic }
+    public enum StatType{ Physic, Defense, Magic, Speed }
     public enum StatusEffectType { None }
     public class Ability
     {

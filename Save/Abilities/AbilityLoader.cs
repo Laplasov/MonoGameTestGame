@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Project1.Abilities;
-using Project1.Units;
+using Project1.Units.UnitProfilePlace;
 using System;
 using System.Collections.Generic;
 using System.IO;
